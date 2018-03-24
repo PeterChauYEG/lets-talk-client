@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import Race from './Race';
+import Leaderboard from './Leaderboard';
+// import Race from './Race';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Race />, document.getElementById('root'));
+ReactDOM.render(<Leaderboard />, document.getElementById('root'));
 registerServiceWorker();

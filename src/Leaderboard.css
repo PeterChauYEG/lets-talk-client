@@ -1,0 +1,43 @@
+.Leaderboard {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.Leaderboard-button-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px 0
+}
+
+.Leaderboard-button {
+  margin: 0 16px;
+  padding: 8px 16px;
+  width: 25vw;
+  background-color: #D8D8D8;
+}
+
+.Leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.Leaderboard-headline {
+  font-size: 1.5em;
+}
+
+.Leaderboard-title {
+  font-size: 1.5em;
+}
+
+.Leaderboard-rank {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Leaderboard-username {
+  font-size: 1.5em;
+}
