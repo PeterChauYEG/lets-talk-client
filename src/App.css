@@ -4,35 +4,35 @@
   text-align: center;
 }
 
-.body-container {
+.App-body-container {
   margin: 16px 0;
 }
 
-.button-container {
+.App-button-container {
   display: flex;
   justify-content: space-around;
   margin: 16px 0
 }
 
-.button {
+.App-button {
   margin: 0 16px;
   padding: 8px 16px;
   width: 25vw;
   background-color: #D8D8D8;
 }
 
-.header {
+.App-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 16px;
 }
 
-.title {
+.App-title {
   font-size: 1.5em;
 }
 
-.stream-container {
+.App-stream-container {
   height: 75vh;
   width: 100vw;
   display: flex;
@@ -40,17 +40,16 @@
   align-items: center;
 }
 
-.stream {
+.App-stream {
   height: 75vh;
   width: 100vw;
   margin: 0 16px;
 }
 
-.queue-position {
+.App-queue-position {
   font-size: 1em;
 }
 
-.username {
-  font-size: 1em;
-  font-weight: normal;
+.App-username {
+  font-size: 1.5em;
 }

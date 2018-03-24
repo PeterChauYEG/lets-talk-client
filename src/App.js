@@ -5,26 +5,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="header">
-          <h1 className="title">MMOR</h1>
-          <h1 className="username">Username</h1>
+        <header className="App-header">
+          <h1 className="App-title">MMOR</h1>
+          <p className="App-username">Username</p>
         </header>
-        <div className="stream-container">
-          <img className="stream"
+        <div className="App-stream-container">
+          <img className="App-stream"
             src="http://via.placeholder.com/500x500" />
         </div>
 
-        <div className="body-container">
-          <p className="queue-position">
+        <div className="App-body-container">
+          <p className="App-queue-position">
             Queue Position: Not in Queue
           </p>
         </div>
 
-        <div className="button-container">
-          <div className="button">
+        <div className="App-button-container">
+          <div className="App-button">
             Join Queue
           </div>
-          <div className="button">
+          <div className="App-button">
             Leaderboard
           </div>
         </div>
