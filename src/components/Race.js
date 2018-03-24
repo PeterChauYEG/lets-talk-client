@@ -15,10 +15,11 @@ import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
 import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown'
 import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
 import faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight'
+import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css';
 
 // socket
-const socket = io('http://localhost:8080')
+const socket = io('http://192.168.0.19:8080')
 
 class Race extends Component {
   handleControl(direction) {
@@ -48,6 +49,10 @@ class Race extends Component {
             onClick={() => this.handleControl('forward')}
             icon={faCaretUp}
             size="4x" />
+          <FontAwesomeIcon
+            onClick={() => this.handleControl('stop')}
+            icon={faStop}
+            size="3x" />
           <FontAwesomeIcon
             onClick={() => this.handleControl('backward')}
             icon={faCaretDown}
