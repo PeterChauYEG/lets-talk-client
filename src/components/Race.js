@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+
+//redux
+import { store } from '../redux';
+
+// navigation
+import { push } from 'react-router-redux';
+
+// styles
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
 import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown'
 import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
 import faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight'
-
 import './Race.css';
 
 class Race extends Component {
@@ -12,7 +19,10 @@ class Race extends Component {
     return (
       <div className="Race">
         <header className="Race-header">
-          <h1 className="Race-title">MMOR</h1>
+          <h1 className="Home-title"
+            onClick={() => store.dispatch(push('/'))}>
+            MMOR
+          </h1>
           <p className="Race-time">
             Race Time: 00:00
           </p>
@@ -20,7 +30,8 @@ class Race extends Component {
         </header>
         <div className="Race-stream-container">
           <img className="Race-stream"
-            src="http://via.placeholder.com/500x500" />
+            src="http://via.placeholder.com/500x500"
+            alt="stream" />
         </div>
         <div className="Race-left-control-container">
           <FontAwesomeIcon icon={faCaretUp} size="4x" />

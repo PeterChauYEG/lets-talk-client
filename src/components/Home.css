@@ -1,38 +1,38 @@
-.App {
+.Home {
   height: 100vh;
   width: 100vw;
   text-align: center;
 }
 
-.App-body-container {
+.Home-body-container {
   margin: 16px 0;
 }
 
-.App-button-container {
+.Home-button-container {
   display: flex;
   justify-content: space-around;
   margin: 16px 0
 }
 
-.App-button {
+.Home-button {
   margin: 0 16px;
   padding: 8px 16px;
   width: 25vw;
   background-color: #D8D8D8;
 }
 
-.App-header {
+.Home-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 16px;
 }
 
-.App-title {
+.Home-title {
   font-size: 1.5em;
 }
 
-.App-stream-container {
+.Home-stream-container {
   height: 75vh;
   width: 100vw;
   display: flex;
@@ -40,16 +40,16 @@
   align-items: center;
 }
 
-.App-stream {
+.Home-stream {
   height: 75vh;
   width: 100vw;
   margin: 0 16px;
 }
 
-.App-queue-position {
+.Home-queue-position {
   font-size: 1em;
 }
 
-.App-username {
+.Home-username {
   font-size: 1.5em;
 }
