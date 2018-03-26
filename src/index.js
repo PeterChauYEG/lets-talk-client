@@ -10,7 +10,7 @@ import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
 
 // service
-import registerServiceWorker from './registerServiceWorker';
+import { unregister } from './registerServiceWorker';
 
 // styles
 import './index.css';
@@ -34,4 +34,4 @@ const AppProvider = (
 )
 
 ReactDOM.render(AppProvider, document.getElementById('root'));
-registerServiceWorker();
+unregister();

@@ -20,13 +20,35 @@ import './Race.css';
 
 // socket
 const socket = io('http://192.168.0.19:8080')
+// const ss = require('socket.io-stream');
 
 class Race extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      url: 'http://192.168.0.22:9090/test.mjpg'
+    }
+  }
+
   handleControl(direction) {
     socket.emit('gpio', direction);
   }
 
   render() {
+    // socket.on('stream', function(data) {
+    //   var url = data
+    //   console.log(url)
+    //   this.setState({url})
+    // })
+
+    // var that = this
+    // ss(socket).on('stream', function(stream, data) {
+    //     var url = stream
+    //     console.log(url)
+    //     that.setState({url})
+    // })
+
     return (
       <div className="Race">
         <header className="Race-header">
@@ -40,9 +62,11 @@ class Race extends Component {
           <p className="Race-username">Username</p>
         </header>
         <div className="Race-stream-container">
-          <img className="Race-stream"
-            src="http://via.placeholder.com/500x500"
-            alt="stream" />
+          <img
+            className="Race-stream"
+            src={this.state.url}
+            alt="stream"
+          />
         </div>
         <div className="Race-left-control-container">
           <FontAwesomeIcon
