@@ -21,9 +21,11 @@ class Home extends Component {
           <p className="Home-username">Username</p>
         </header>
         <div className="Home-stream-container">
-          <img className="Home-stream"
-            src="http://via.placeholder.com/500x500"
-            alt="stream" />
+          <img
+            className="Home-stream"
+            src="http://192.168.0.22:9090/test.mjpg"
+            alt="stream"
+          />
         </div>
 
         <div className="Home-body-container">

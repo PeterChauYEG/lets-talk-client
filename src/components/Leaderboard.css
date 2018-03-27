@@ -2,18 +2,18 @@
   height: 100vh;
   width: 100vw;
   text-align: center;
+  overflow: scroll;
 }
 
 .Leaderboard-button-container {
   display: flex;
   justify-content: space-around;
-  margin: 16px 0
+  margin: 8px 0
 }
 
 .Leaderboard-button {
-  margin: 0 16px;
-  padding: 8px 16px;
-  width: 25vw;
+  padding: 8px;
+  width: 33vw;
   background-color: #D8D8D8;
 }
 
@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 8px;
 }
 
 .Leaderboard-headline {
@@ -40,4 +40,8 @@
 
 .Leaderboard-username {
   font-size: 1.5em;
+}
+
+.Leaderboard-rank-username {
+  font-size: 1em;
 }

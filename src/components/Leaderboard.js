@@ -27,7 +27,7 @@ class Leaderboard extends Component {
             <p className="Leaderboard-position">
               #1
             </p>
-            <p className="Leaderboard-username">
+            <p className="Leaderboard-rank-username">
               Username
             </p>
             <p className="Leaderboard-racetime">
@@ -38,7 +38,7 @@ class Leaderboard extends Component {
             <p className="Leaderboard-position">
               #1
             </p>
-            <p className="Leaderboard-username">
+            <p className="Leaderboard-rank-username">
               Username
             </p>
             <p className="Leaderboard-racetime">
@@ -49,7 +49,7 @@ class Leaderboard extends Component {
             <p className="Leaderboard-position">
               #1
             </p>
-            <p className="Leaderboard-username">
+            <p className="Leaderboard-rank-username">
               Username
             </p>
             <p className="Leaderboard-racetime">
@@ -60,7 +60,7 @@ class Leaderboard extends Component {
             <p className="Leaderboard-position">
               #1
             </p>
-            <p className="Leaderboard-username">
+            <p className="Leaderboard-rank-username">
               Username
             </p>
             <p className="Leaderboard-racetime">
@@ -71,7 +71,7 @@ class Leaderboard extends Component {
             <p className="Leaderboard-position">
               #1
             </p>
-            <p className="Leaderboard-username">
+            <p className="Leaderboard-rank-username">
               Username
             </p>
             <p className="Leaderboard-racetime">
@@ -82,7 +82,7 @@ class Leaderboard extends Component {
             <p className="Leaderboard-position">
               #1
             </p>
-            <p className="Leaderboard-username">
+            <p className="Leaderboard-rank-username">
               Username
             </p>
             <p className="Leaderboard-racetime">
@@ -93,7 +93,7 @@ class Leaderboard extends Component {
             <p className="Leaderboard-position">
               #1
             </p>
-            <p className="Leaderboard-username">
+            <p className="Leaderboard-rank-username">
               Username
             </p>
             <p className="Leaderboard-racetime">
@@ -104,7 +104,7 @@ class Leaderboard extends Component {
             <p className="Leaderboard-position">
               #1
             </p>
-            <p className="Leaderboard-username">
+            <p className="Leaderboard-rank-username">
               Username
             </p>
             <p className="Leaderboard-racetime">

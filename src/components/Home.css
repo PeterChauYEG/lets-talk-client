@@ -4,20 +4,19 @@
   text-align: center;
 }
 
-.Home-body-container {
-  margin: 16px 0;
-}
-
 .Home-button-container {
   display: flex;
-  justify-content: space-around;
-  margin: 16px 0
+  justify-content: space-between;
+  position: absolute;
+  padding: 0 8px;
+  bottom: 8px;
+  left: 0;
+  width: 100vw;
 }
 
 .Home-button {
-  margin: 0 16px;
-  padding: 8px 16px;
-  width: 25vw;
+  padding: 8px;
+  width: 33vw;
   background-color: #D8D8D8;
 }
 
@@ -25,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 16px;
+  margin: 0 8px;
 }
 
 .Home-title {
@@ -33,7 +32,7 @@
 }
 
 .Home-stream-container {
-  height: 75vh;
+  height: 70vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -43,7 +42,6 @@
 .Home-stream {
   height: 75vh;
   width: 100vw;
-  margin: 0 16px;
 }
 
 .Home-queue-position {

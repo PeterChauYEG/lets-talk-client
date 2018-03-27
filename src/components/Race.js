@@ -23,14 +23,6 @@ const socket = io('http://192.168.0.19:8080')
 // const ss = require('socket.io-stream');
 
 class Race extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      url: 'http://192.168.0.22:9090/test.mjpg'
-    }
-  }
-
   handleControl(direction) {
     socket.emit('gpio', direction);
   }
@@ -52,44 +44,51 @@ class Race extends Component {
     return (
       <div className="Race">
         <header className="Race-header">
-          <h1 className="Home-title"
+          <h1 className="Race-title"
             onClick={() => store.dispatch(push('/'))}>
             MMOR
           </h1>
           <p className="Race-time">
-            Race Time: 00:00
+            Time: 00:00
           </p>
           <p className="Race-username">Username</p>
         </header>
         <div className="Race-stream-container">
           <img
             className="Race-stream"
-            src={this.state.url}
+            src="http://192.168.0.22:9090/test.mjpg"
             alt="stream"
           />
         </div>
-        <div className="Race-left-control-container">
+        <div className="Race-control-container">
           <FontAwesomeIcon
+            className="Race-icon"
             onClick={() => this.handleControl('forward')}
             icon={faCaretUp}
             size="4x" />
+
+          <div className="Race-center-control-container">
+            <FontAwesomeIcon
+              className="Race-icon"
+              onClick={() => this.handleControl('left')}
+              icon={faCaretLeft}
+              size="4x" />
+            <FontAwesomeIcon
+              className="Race-icon"
+              onClick={() => this.handleControl('stop')}
+              icon={faStop}
+              size="3x" />
+            <FontAwesomeIcon
+              className="Race-icon"
+              onClick={() => this.handleControl('right')}
+              icon={faCaretRight}
+              size="4x" />
+          </div>
+
           <FontAwesomeIcon
-            onClick={() => this.handleControl('stop')}
-            icon={faStop}
-            size="3x" />
-          <FontAwesomeIcon
+            className="Race-icon"
             onClick={() => this.handleControl('backward')}
             icon={faCaretDown}
-            size="4x" />
-        </div>
-        <div className="Race-right-control-container">
-          <FontAwesomeIcon
-            onClick={() => this.handleControl('left')}
-            icon={faCaretLeft}
-            size="4x" />
-          <FontAwesomeIcon
-            onClick={() => this.handleControl('right')}
-            icon={faCaretRight}
             size="4x" />
         </div>
       </div>
