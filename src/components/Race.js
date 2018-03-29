@@ -23,6 +23,42 @@ const socket = io('http://192.168.0.19:8080')
 // const ss = require('socket.io-stream');
 
 class Race extends Component {
+  componentDidMount () {
+    document.addEventListener('keydown', this.handleKeydown.bind(this))
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeydown.bind(this))
+  }
+
+  handleKeydown(event) {
+    let direction
+
+    // map key to direction
+    switch (event.key) {
+      case 'w':
+        direction = 'forward'
+        break;
+
+      case 'd':
+        direction = 'right'
+        break
+
+      case 'x':
+        direction = 'backward'
+        break
+      case 'a':
+        direction = 'left'
+        break
+      case 's':
+      default:
+        direction = 'stop'
+    }
+
+    // send the keypress event mapped to direction to API
+    this.handleControl(direction)
+  }
+
   handleControl(direction) {
     socket.emit('gpio', direction);
   }
