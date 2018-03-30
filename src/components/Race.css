@@ -26,11 +26,24 @@
   stroke-width: 10;
 }
 
-.Race-control-container {
+.Race-control-container-left {
   height: 200px;
   width: 200px;
   position: absolute;
   left: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Race-control-container-right {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  right: 0;
   bottom: 0;
   z-index: 1;
   display: flex;

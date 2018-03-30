@@ -12,6 +12,7 @@ import io from 'socket.io-client'
 // styles
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
+import faAngleDoubleUp from '@fortawesome/fontawesome-free-solid/faAngleDoubleUp'
 import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown'
 import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
 import faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight'
@@ -20,7 +21,6 @@ import './Race.css';
 
 // socket
 const socket = io('http://192.168.0.19:8080')
-// const ss = require('socket.io-stream');
 
 class Race extends Component {
   componentDidMount () {
@@ -36,6 +36,10 @@ class Race extends Component {
 
     // map key to direction
     switch (event.key) {
+      case ' ':
+        direction = 'boost'
+        break;
+
       case 'w':
         direction = 'forward'
         break;
@@ -64,19 +68,6 @@ class Race extends Component {
   }
 
   render() {
-    // socket.on('stream', function(data) {
-    //   var url = data
-    //   console.log(url)
-    //   this.setState({url})
-    // })
-
-    // var that = this
-    // ss(socket).on('stream', function(stream, data) {
-    //     var url = stream
-    //     console.log(url)
-    //     that.setState({url})
-    // })
-
     return (
       <div className="Race">
         <header className="Race-header">
@@ -92,11 +83,11 @@ class Race extends Component {
         <div className="Race-stream-container">
           <img
             className="Race-stream"
-            src="http://192.168.0.22:9090/test.mjpg"
+            src="http://192.168.0.19:8080/test.mjpg"
             alt="stream"
           />
         </div>
-        <div className="Race-control-container">
+        <div className="Race-control-container-left">
           <FontAwesomeIcon
             className="Race-icon"
             onClick={() => this.handleControl('forward')}
@@ -125,6 +116,14 @@ class Race extends Component {
             className="Race-icon"
             onClick={() => this.handleControl('backward')}
             icon={faCaretDown}
+            size="4x" />
+        </div>
+
+        <div className="Race-control-container-right">
+          <FontAwesomeIcon
+            className="Race-icon"
+            onClick={() => this.handleControl('boost')}
+            icon={faAngleDoubleUp}
             size="4x" />
         </div>
       </div>
