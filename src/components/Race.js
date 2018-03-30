@@ -7,7 +7,7 @@ import { store } from '../redux';
 import { push } from 'react-router-redux';
 
 // socket
-import io from 'socket.io-client'
+// import io from 'socket.io-client'
 
 // styles
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -19,49 +19,58 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css';
 
 // socket
-const socket = io('http://192.168.0.19:8080')
+// const socket = io('http://192.168.0.19:8080')
+// const streamSocket = io('http://192.168.0.19:8081')
 // const ss = require('socket.io-stream');
 
 class Race extends Component {
-  componentDidMount () {
-    document.addEventListener('keydown', this.handleKeydown.bind(this))
-  }
+  constructor() {
+    super()
 
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeydown.bind(this))
-  }
-
-  handleKeydown(event) {
-    let direction
-
-    // map key to direction
-    switch (event.key) {
-      case 'w':
-        direction = 'forward'
-        break;
-
-      case 'd':
-        direction = 'right'
-        break
-
-      case 'x':
-        direction = 'backward'
-        break
-      case 'a':
-        direction = 'left'
-        break
-      case 's':
-      default:
-        direction = 'stop'
+    this.state = {
+      url: ''
     }
-
-    // send the keypress event mapped to direction to API
-    this.handleControl(direction)
   }
 
-  handleControl(direction) {
-    socket.emit('gpio', direction);
-  }
+  // componentDidMount () {
+  //   document.addEventListener('keydown', this.handleKeydown.bind(this))
+  // }
+  //
+  // componentWillUnmount() {
+  //   document.removeEventListener('keydown', this.handleKeydown.bind(this))
+  // }
+  //
+  // handleKeydown(event) {
+  //   let direction
+  //
+  //   // map key to direction
+  //   switch (event.key) {
+  //     case 'w':
+  //       direction = 'forward'
+  //       break;
+  //
+  //     case 'd':
+  //       direction = 'right'
+  //       break
+  //
+  //     case 'x':
+  //       direction = 'backward'
+  //       break
+  //     case 'a':
+  //       direction = 'left'
+  //       break
+  //     case 's':
+  //     default:
+  //       direction = 'stop'
+  //   }
+  //
+  //   // send the keypress event mapped to direction to API
+  //   this.handleControl(direction)
+  // }
+
+  // handleControl(direction) {
+  //   socket.emit('gpio', direction);
+  // }
 
   render() {
     // socket.on('stream', function(data) {
@@ -71,7 +80,7 @@ class Race extends Component {
     // })
 
     // var that = this
-    // ss(socket).on('stream', function(stream, data) {
+    // ss(streamSocket).on('stream', function(stream, data) {
     //     var url = stream
     //     console.log(url)
     //     that.setState({url})
@@ -90,9 +99,14 @@ class Race extends Component {
           <p className="Race-username">Username</p>
         </header>
         <div className="Race-stream-container">
-          <img
+          {/* <img
             className="Race-stream"
             src="http://192.168.0.22:9090/test.mjpg"
+            alt="stream"
+          /> */}
+          <img
+            className="Race-stream"
+            src="http://192.168.0.19:8081/test.png"
             alt="stream"
           />
         </div>

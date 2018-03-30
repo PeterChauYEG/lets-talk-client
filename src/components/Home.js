@@ -21,11 +21,19 @@ class Home extends Component {
           <p className="Home-username">Username</p>
         </header>
         <div className="Home-stream-container">
-          <img
+          {/* robot video feed to client direct */}
+          {/* <img
             className="Home-stream"
             src="http://192.168.0.22:9090/test.mjpg"
             alt="stream"
-          />
+          /> */}
+
+          {/* robot feed from api to client  */}
+          {/* <img
+            className="Home-stream"
+            src="http://192.168.0.19:8080/test.mjpg"
+            alt="stream"
+          /> */}
         </div>
 
         <div className="Home-body-container">
