@@ -7,11 +7,12 @@ import { store } from '../redux';
 import { push } from 'react-router-redux';
 
 // socket
-// import io from 'socket.io-client'
+import io from 'socket.io-client'
 
 // styles
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
+import faAngleDoubleUp from '@fortawesome/fontawesome-free-solid/faAngleDoubleUp'
 import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown'
 import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
 import faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight'
@@ -19,73 +20,54 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css';
 
 // socket
-// const socket = io('http://192.168.0.19:8080')
-// const streamSocket = io('http://192.168.0.19:8081')
-// const ss = require('socket.io-stream');
+const socket = io('http://192.168.0.19:8080')
 
 class Race extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      url: ''
-    }
+  componentDidMount () {
+    document.addEventListener('keydown', this.handleKeydown.bind(this))
   }
 
-  // componentDidMount () {
-  //   document.addEventListener('keydown', this.handleKeydown.bind(this))
-  // }
-  //
-  // componentWillUnmount() {
-  //   document.removeEventListener('keydown', this.handleKeydown.bind(this))
-  // }
-  //
-  // handleKeydown(event) {
-  //   let direction
-  //
-  //   // map key to direction
-  //   switch (event.key) {
-  //     case 'w':
-  //       direction = 'forward'
-  //       break;
-  //
-  //     case 'd':
-  //       direction = 'right'
-  //       break
-  //
-  //     case 'x':
-  //       direction = 'backward'
-  //       break
-  //     case 'a':
-  //       direction = 'left'
-  //       break
-  //     case 's':
-  //     default:
-  //       direction = 'stop'
-  //   }
-  //
-  //   // send the keypress event mapped to direction to API
-  //   this.handleControl(direction)
-  // }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeydown.bind(this))
+  }
 
-  // handleControl(direction) {
-  //   socket.emit('gpio', direction);
-  // }
+  handleKeydown(event) {
+    let direction
+
+    // map key to direction
+    switch (event.key) {
+      case ' ':
+        direction = 'boost'
+        break;
+
+      case 'w':
+        direction = 'forward'
+        break;
+
+      case 'd':
+        direction = 'right'
+        break
+
+      case 'x':
+        direction = 'backward'
+        break
+      case 'a':
+        direction = 'left'
+        break
+      case 's':
+      default:
+        direction = 'stop'
+    }
+
+    // send the keypress event mapped to direction to API
+    this.handleControl(direction)
+  }
+
+  handleControl(direction) {
+    socket.emit('gpio', direction);
+  }
 
   render() {
-    // socket.on('stream', function(data) {
-    //   var url = data
-    //   console.log(url)
-    //   this.setState({url})
-    // })
-
-    // var that = this
-    // ss(streamSocket).on('stream', function(stream, data) {
-    //     var url = stream
-    //     console.log(url)
-    //     that.setState({url})
-    // })
-
     return (
       <div className="Race">
         <header className="Race-header">
@@ -99,18 +81,13 @@ class Race extends Component {
           <p className="Race-username">Username</p>
         </header>
         <div className="Race-stream-container">
-          {/* <img
-            className="Race-stream"
-            src="http://192.168.0.22:9090/test.mjpg"
-            alt="stream"
-          /> */}
           <img
             className="Race-stream"
-            src="http://192.168.0.19:8081/test.png"
+            src="http://192.168.0.19:8080/test.mjpg"
             alt="stream"
           />
         </div>
-        <div className="Race-control-container">
+        <div className="Race-control-container-left">
           <FontAwesomeIcon
             className="Race-icon"
             onClick={() => this.handleControl('forward')}
@@ -139,6 +116,14 @@ class Race extends Component {
             className="Race-icon"
             onClick={() => this.handleControl('backward')}
             icon={faCaretDown}
+            size="4x" />
+        </div>
+
+        <div className="Race-control-container-right">
+          <FontAwesomeIcon
+            className="Race-icon"
+            onClick={() => this.handleControl('boost')}
+            icon={faAngleDoubleUp}
             size="4x" />
         </div>
       </div>
