@@ -23,7 +23,7 @@ class Home extends Component {
         <div className="Home-stream-container">
           <img
             className="Home-stream"
-            src="http://192.168.0.19:8080/test.mjpg"
+            src="http://lets-talk.ngrok.io/test.mjpg"
             alt="stream"
           />
         </div>
