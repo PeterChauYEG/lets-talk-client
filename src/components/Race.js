@@ -20,6 +20,7 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css';
 
 // socket
+// app engine does not support https ?
 const socket = io('http://192.168.0.19:8080')
 
 class Race extends Component {
