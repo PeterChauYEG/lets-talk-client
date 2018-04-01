@@ -20,7 +20,7 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css';
 
 // socket
-const socket = io('http://localhost:8080')
+const socket = io('http://35.185.200.144:8080')
 
 class Race extends Component {
   componentDidMount () {
