@@ -21,6 +21,7 @@ import './Race.css';
 
 // socket
 const socket = io('http://35.185.200.144:8080')
+socket.emit('log message', 'client connected');
 
 class Race extends Component {
   componentDidMount () {
