@@ -20,9 +20,9 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css';
 
 // socket
-// const socket = io('http://35.185.200.144:8080')
+const socket = io('http://35.185.200.144:8080')
 // const socket = io('http://192.168.0.19:8080')
-const socket = io('http://dccb0d04.ngrok.io')
+// const socket = io('http://dccb0d04.ngrok.io')
 socket.emit('log message', 'client connected');
 
 class Race extends Component {
