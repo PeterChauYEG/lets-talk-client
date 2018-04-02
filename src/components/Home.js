@@ -23,7 +23,7 @@ class Home extends Component {
         <div className="Home-stream-container">
           <img
             className="Home-stream"
-            src="http://lets-talk.ngrok.io/test.mjpg"
+            src={process.env.REACT_APP_STREAM}
             alt="stream"
           />
         </div>

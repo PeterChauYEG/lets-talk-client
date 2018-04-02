@@ -20,9 +20,7 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css';
 
 // socket
-const socket = io('http://35.197.46.134:8080')
-// const socket = io('http://192.168.0.19:8080')
-// const socket = io('http://dccb0d04.ngrok.io')
+const socket = io(process.env.REACT_APP_WEBSOCKET)
 socket.emit('log message', 'client connected');
 
 class Race extends Component {
@@ -86,7 +84,7 @@ class Race extends Component {
         <div className="Race-stream-container">
           <img
             className="Race-stream"
-            src="http://lets-talk.ngrok.io/test.mjpg"
+            src={process.env.REACT_APP_STREAM}
             alt="stream"
           />
         </div>
