@@ -10,6 +10,8 @@
 ## Develop
 1. npm start
 2. Navigate to: `http://localhost:3000`
+* uses `.env.development`
 
 ## Deployment
 1. npm run build
+* uses `.env.production`
