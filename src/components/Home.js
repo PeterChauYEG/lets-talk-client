@@ -6,6 +6,10 @@ import { store } from '../redux';
 // navigation
 import { push } from 'react-router-redux';
 
+// components
+import Header from './Header';
+import VideoFeed from './VideoFeed';
+
 // styles
 import './Home.css';
 
@@ -13,22 +17,15 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <header className="Home-header">
-          <h1 className="Home-title"
-            onClick={() => store.dispatch(push('/'))}>
-            MMOR
-          </h1>
-          <p className="Home-username">Username</p>
-        </header>
-        <div className="Home-stream-container">
-          <img
-            className="Home-stream"
-            src={process.env.REACT_APP_STREAM}
-            alt="stream"
-          />
-        </div>
+        <Header />
+        <VideoFeed
+          className="Home-stream"
+          containerClassName="Home-stream-container" />
 
         <div className="Home-body-container">
+          <p className="Home-robot-status">
+            Robot Status: Online
+          </p>
           <p className="Home-queue-position">
             Queue Position: Not in Queue
           </p>

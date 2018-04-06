@@ -1,0 +1,26 @@
+.Header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.Header-time {
+  font-size: 1.5em;
+  text-shadow: 0px 0px 3px #fff;
+}
+
+.Header-title {
+  font-size: 1.5em;
+  text-shadow: 0px 0px 3px #fff;
+}
+
+.Header-username {
+  font-size: 1.5em;
+  text-shadow: 0px 0px 3px #fff;
+}

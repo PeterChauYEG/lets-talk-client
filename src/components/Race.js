@@ -9,6 +9,10 @@ import { push } from 'react-router-redux';
 // socket
 import io from 'socket.io-client'
 
+// components
+import Header from './Header';
+import VideoFeed from './VideoFeed';
+
 // styles
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
@@ -71,23 +75,10 @@ class Race extends Component {
   render() {
     return (
       <div className="Race">
-        <header className="Race-header">
-          <h1 className="Race-title"
-            onClick={() => store.dispatch(push('/'))}>
-            MMOR
-          </h1>
-          <p className="Race-time">
-            Time: 00:00
-          </p>
-          <p className="Race-username">Username</p>
-        </header>
-        <div className="Race-stream-container">
-          <img
-            className="Race-stream"
-            src={process.env.REACT_APP_STREAM}
-            alt="stream"
-          />
-        </div>
+        <Header />
+        <VideoFeed
+          className="Race-stream"
+          containerClassName="Race-stream-container" />
         <div className="Race-control-container-left">
           <FontAwesomeIcon
             className="Race-icon"

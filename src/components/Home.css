@@ -4,6 +4,17 @@
   text-align: center;
 }
 
+.Home-body-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  padding: 0 8px;
+  bottom: 50px;
+  left: 0;
+  width: 100vw;
+}
+
 .Home-button-container {
   display: flex;
   justify-content: space-between;
@@ -20,19 +31,8 @@
   background-color: #D8D8D8;
 }
 
-.Home-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 8px;
-}
-
-.Home-title {
-  font-size: 1.5em;
-}
-
 .Home-stream-container {
-  height: 70vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -41,13 +41,12 @@
 
 .Home-stream {
   height: 75vh;
-  width: 100vw;
 }
 
 .Home-queue-position {
   font-size: 1em;
 }
 
-.Home-username {
-  font-size: 1.5em;
+.Home-robot-status {
+  font-size: 1em;
 }
