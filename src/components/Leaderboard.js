@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
 import './Leaderboard.css';
 
-//redux
-import { store } from '../redux';
-
-// navigation
-import { push } from 'react-router-redux';
+// components
+import Header from './Header'
 
 class Leaderboard extends Component {
   render() {
     return (
       <div className="Leaderboard">
-        <header className="Leaderboard-header">
-          <h1 className="Home-title"
-            onClick={() => store.dispatch(push('/'))}>
-            MMOR
-          </h1>
-          <p className="Leaderboard-headline">
-            Leaderboard
-          </p>
-          <p className="Leaderboard-username">Username</p>
-        </header>
+        <Header title="Leaderboard" />
 
         <div className="Leaderboard-rankings">
           <div className="Leaderboard-rank">
