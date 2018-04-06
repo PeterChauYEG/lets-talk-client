@@ -8,6 +8,7 @@ import { push } from 'react-router-redux';
 
 // components
 import Header from './Header';
+import SystemDetails from './SystemDetails';
 import VideoFeed from './VideoFeed';
 
 // styles
@@ -21,15 +22,7 @@ class Home extends Component {
         <VideoFeed
           className="Home-stream"
           containerClassName="Home-stream-container" />
-
-        <div className="Home-body-container">
-          <p className="Home-robot-status">
-            Robot Status: Online
-          </p>
-          <p className="Home-queue-position">
-            Queue Position: Not in Queue
-          </p>
-        </div>
+        <SystemDetails />
 
         <div className="Home-button-container">
           <div className="Home-button"

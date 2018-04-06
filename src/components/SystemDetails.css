@@ -1,0 +1,26 @@
+.SystemDetails-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  padding: 0 8px;
+  bottom: 50px;
+  left: 0;
+  width: 100vw;
+}
+
+.SystemDetails-current-pilot {
+  font-size: 1em;
+}
+
+.SystemDetails-queue-position {
+  font-size: 1em;
+}
+
+.SystemDetails-race-time {
+  font-size: 1em;
+}
+
+.SystemDetails-robot-status {
+  font-size: 1em;
+}

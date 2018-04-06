@@ -17,9 +17,6 @@ class Header extends Component {
           onClick={() => store.dispatch(push('/'))}>
           MMOR
         </h1>
-        <p className="Header-time">
-          Time: 00:00
-        </p>
         <p className="Header-username">Username</p>
       </header>
     );
