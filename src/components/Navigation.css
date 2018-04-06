@@ -1,0 +1,15 @@
+.Navigation-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  padding: 0 8px;
+  bottom: 8px;
+  left: 0;
+  width: 100vw;
+}
+
+.Navigation-button {
+  padding: 8px;
+  width: 33vw;
+  background-color: #D8D8D8;
+}
