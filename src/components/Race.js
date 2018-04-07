@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // lib
-import { publishGPIO } from '../api/sockets'
+import { handleKeydown } from '../lib/robot'
 
 // components
 import GPIOButton from './GPIOButton'
@@ -19,43 +19,11 @@ import './Race.css'
 
 class Race extends Component {
   componentDidMount () {
-    document.addEventListener('keydown', this.handleKeydown.bind(this))
+    document.addEventListener('keydown', handleKeydown.bind(this))
   }
 
   componentWillUnmount () {
-    document.removeEventListener('keydown', this.handleKeydown.bind(this))
-  }
-
-  handleKeydown (event) {
-    let direction
-
-    // map key to direction
-    switch (event.key) {
-      case ' ':
-        direction = 'boost'
-        break
-
-      case 'w':
-        direction = 'forward'
-        break
-
-      case 'd':
-        direction = 'right'
-        break
-
-      case 'x':
-        direction = 'backward'
-        break
-      case 'a':
-        direction = 'left'
-        break
-      case 's':
-      default:
-        direction = 'stop'
-    }
-
-    // send the keypress event mapped to direction to API
-    publishGPIO(direction)
+    document.removeEventListener('keydown', handleKeydown.bind(this))
   }
 
   render () {
