@@ -39,10 +39,14 @@ class Navigation extends Component {
     }
   }
 
+  handleJoinQueue () {
+    publishQueue('join')
+  }
+
   render () {
     return (
       <div className='Navigation-container'>
-        <div className='Navigation-button' onClick={publishQueue}>
+        <div className='Navigation-button' onClick={this.handleJoinQueue}>
           Join Queue
         </div>
         <div

@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 // lib
 import { handleKeydown } from '../lib/robot'
 
+// api
+import { publishQueue } from '../api/sockets'
+
 // components
 import GPIOButton from './GPIOButton'
 import Header from './Header'
@@ -24,6 +27,8 @@ class Race extends Component {
 
   componentWillUnmount () {
     document.removeEventListener('keydown', handleKeydown.bind(this))
+
+    publishQueue('leave')
   }
 
   render () {

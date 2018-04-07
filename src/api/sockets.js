@@ -7,7 +7,7 @@ socket.on('connect', () => {
   socket.emit('client status', 'connected')
 })
 
-const publishQueue = () => socket.emit('queue', 'join')
+const publishQueue = action => socket.emit('queue', action)
 
 const publishGPIO = direction => socket.emit('gpio', direction)
 
