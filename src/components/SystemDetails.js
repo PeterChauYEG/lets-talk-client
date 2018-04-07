@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // socket
-import { subscribeToRobotStatus } from '../api/sockets'
+import { subscribeToQueue, subscribeToRobotStatus } from '../api/sockets'
 
 // components
 import GPIOButton from './GPIOButton'
@@ -20,8 +20,19 @@ class SystemDetails extends Component {
     super()
 
     this.state = {
+      queuePosition: 'Not in Queue',
       robotStatus: 'unknown'
     }
+
+    subscribeToQueue((err, queuePosition) => {
+      if (err) {
+        console.log('error: ' + err)
+        return
+      }
+      this.setState({
+        queuePosition
+      })
+    })
 
     subscribeToRobotStatus((err, robotStatus) => {
       if (err) {
@@ -36,7 +47,7 @@ class SystemDetails extends Component {
   }
 
   render () {
-    const { robotStatus } = this.state
+    const { queuePosition, robotStatus } = this.state
 
     return (
       <div className='SystemDetails-container'>
@@ -48,10 +59,10 @@ class SystemDetails extends Component {
         </p>
         <p className="SystemDetails-race-time">
           Race Time: 00:00
-        </p>
-        <p className="SystemDetails-queue-position">
-          Queue Position: Not in Queue
         </p> */}
+        <p className='SystemDetails-queue-position'>
+          Queue Position: {queuePosition}
+        </p>
         <div className='SystemDetails-GPIO-container'>
           <GPIOButton direction='forward' disable icon={faCaretUp} size='3x' />
           <GPIOButton direction='left' disable icon={faCaretLeft} size='3x' />

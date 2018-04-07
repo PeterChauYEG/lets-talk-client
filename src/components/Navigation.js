@@ -6,17 +6,43 @@ import { store } from '../redux'
 // navigation
 import { push } from 'react-router-redux'
 
+// api
+import { publishQueue, subscribeToQueue } from '../api/sockets'
+
 // styles
 import './Navigation.css'
 
 class Navigation extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      queuePosition: 'Not in Queue'
+    }
+
+    subscribeToQueue((err, queuePosition) => {
+      if (err) {
+        console.log('error: ' + err)
+        return
+      }
+      this.setState({
+        queuePosition
+      })
+    })
+  }
+
+  componentDidUpdate () {
+    const { queuePosition } = this.state
+
+    if (queuePosition === 0) {
+      store.dispatch(push('/race'))
+    }
+  }
+
   render () {
     return (
       <div className='Navigation-container'>
-        <div
-          className='Navigation-button'
-          onClick={() => store.dispatch(push('/race'))}
-        >
+        <div className='Navigation-button' onClick={publishQueue}>
           Join Queue
         </div>
         <div

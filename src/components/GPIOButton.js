@@ -25,6 +25,8 @@ class GPIOButton extends Component {
         gpioDirection
       })
     })
+
+    this.handleOnClick = this.handleOnClick.bind(this)
   }
 
   handleActive () {
@@ -57,7 +59,7 @@ class GPIOButton extends Component {
     return (
       <FontAwesomeIcon
         className={this.handleActive()}
-        onClick={() => this.handleOnClick()}
+        onClick={this.handleOnClick}
         icon={icon}
         size={size}
       />
