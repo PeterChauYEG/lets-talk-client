@@ -14,6 +14,10 @@
   stroke-width: 10;
 }
 
+.Race-icon-active {
+  color: #ff0000;
+}
+
 .Race-control-container-left {
   height: 200px;
   width: 200px;

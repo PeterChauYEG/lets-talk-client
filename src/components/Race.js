@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // lib
-import { publishGPIO } from '../api/sockets'
+import { publishGPIO, subscribeToGPIO } from '../api/sockets'
 
 // components
 import Header from './Header'
@@ -18,12 +18,44 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css'
 
 class Race extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      gpioDirection: null
+    }
+
+    subscribeToGPIO((err, gpioDirection) => {
+      if (err) {
+        console.log('error: ' + err)
+        return
+      }
+
+      this.setState({
+        gpioDirection
+      })
+    })
+  }
+
   componentDidMount () {
     document.addEventListener('keydown', this.handleKeydown.bind(this))
   }
 
   componentWillUnmount () {
     document.removeEventListener('keydown', this.handleKeydown.bind(this))
+  }
+
+  handleActive (direction) {
+    const { gpioDirection } = this.state
+
+    let className = 'Race-icon'
+
+    // check if null
+    if (gpioDirection === direction) {
+      className = 'Race-icon-active'
+    }
+
+    return className
   }
 
   handleKeydown (event) {
@@ -68,7 +100,7 @@ class Race extends Component {
         />
         <div className='Race-control-container-left'>
           <FontAwesomeIcon
-            className='Race-icon'
+            className={this.handleActive('forward')}
             onClick={() => publishGPIO('forward')}
             icon={faCaretUp}
             size='4x'
@@ -76,19 +108,19 @@ class Race extends Component {
 
           <div className='Race-center-control-container'>
             <FontAwesomeIcon
-              className='Race-icon'
+              className={this.handleActive('left')}
               onClick={() => publishGPIO('left')}
               icon={faCaretLeft}
               size='4x'
             />
             <FontAwesomeIcon
-              className='Race-icon'
+              className={this.handleActive('stop')}
               onClick={() => publishGPIO('stop')}
               icon={faStop}
               size='3x'
             />
             <FontAwesomeIcon
-              className='Race-icon'
+              className={this.handleActive('right')}
               onClick={() => publishGPIO('right')}
               icon={faCaretRight}
               size='4x'
@@ -96,7 +128,7 @@ class Race extends Component {
           </div>
 
           <FontAwesomeIcon
-            className='Race-icon'
+            className={this.handleActive('backward')}
             onClick={() => publishGPIO('backward')}
             icon={faCaretDown}
             size='4x'
@@ -105,7 +137,7 @@ class Race extends Component {
 
         <div className='Race-control-container-right'>
           <FontAwesomeIcon
-            className='Race-icon'
+            className={this.handleActive('boost')}
             onClick={() => publishGPIO('boost')}
             icon={faAngleDoubleUp}
             size='4x'
