@@ -1,34 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-//redux
-import { store } from '../redux';
+// redux
+import { store } from '../redux'
 
 // navigation
-import { push } from 'react-router-redux';
+import { push } from 'react-router-redux'
 
 // styles
-import './Header.css';
+import './Header.css'
 
 class Header extends Component {
-  renderTitle() {
+  renderTitle () {
     const { title } = this.props
 
     if (title) {
-      return <p className="Header-title">{title}</p>
+      return <p className='Header-title'>{title}</p>
     }
   }
-  render() {
+  render () {
     return (
-      <header className="Header-container">
-        <h1 className="Header-site-title"
-          onClick={() => store.dispatch(push('/'))}>
+      <header className='Header-container'>
+        <h1
+          className='Header-site-title'
+          onClick={() => store.dispatch(push('/'))}
+        >
           MMOR
         </h1>
         {this.renderTitle()}
         {/* <p className="Header-username">Username</p> */}
       </header>
-    );
+    )
   }
 }
 
-export default Header;
+export default Header

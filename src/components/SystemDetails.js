@@ -1,30 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 // socket
 import { subscribeToRobotStatus } from '../api/sockets'
 
 // styles
-import './SystemDetails.css';
+import './SystemDetails.css'
 
 class SystemDetails extends Component {
-  constructor() {
+  constructor () {
     super()
 
     this.state = {
       robotStatus: 'unknown'
     }
 
-    subscribeToRobotStatus((err, robotStatus) => this.setState({
-      robotStatus
-    }))
+    subscribeToRobotStatus((err, robotStatus) => {
+      if (err) {
+        console.log('error: ' + err)
+        return
+      }
+
+      this.setState({
+        robotStatus
+      })
+    })
   }
 
-  render() {
+  render () {
     const { robotStatus } = this.state
 
     return (
-      <div className="SystemDetails-container">
-        <p className="SystemDetails-robot-status">
+      <div className='SystemDetails-container'>
+        <p className='SystemDetails-robot-status'>
           Robot Status: {robotStatus}
         </p>
         {/* <p className="SystemDetails-current-pilot">
@@ -37,8 +44,8 @@ class SystemDetails extends Component {
           Queue Position: Not in Queue
         </p> */}
       </div>
-    );
+    )
   }
 }
 
-export default SystemDetails;
+export default SystemDetails

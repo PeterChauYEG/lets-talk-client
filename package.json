@@ -17,10 +17,25 @@
     "redux": "^3.7.2",
     "socket.io-client": "^2.0.4"
   },
+  "devDependencies": {
+    "prettier-standard": "^8.0.1",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1"
+  },
   "scripts": {
+    "lint": "standard --verbose *.js src/**/*.js | snazzy",
+    "fixCode": "standard --fix | snazzy",
+    "format": "prettier-standard *.js src/**/*.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "standard": {
+    "globals": [
+      "it",
+      "fetch",
+      "URL"
+    ]
   }
 }

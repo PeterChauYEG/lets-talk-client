@@ -2,15 +2,12 @@
 import io from 'socket.io-client'
 
 const socket = io(process.env.REACT_APP_WEBSOCKET)
-socket.emit('client status', 'connected');
+socket.emit('client status', 'connected')
 
-const publishGPIO = (direction) =>  socket.emit('gpio', direction);
+const publishGPIO = direction => socket.emit('gpio', direction)
 
-const subscribeToRobotStatus = (cb) => {
+const subscribeToRobotStatus = cb => {
   socket.on('robot status', robotStatus => cb(null, robotStatus))
 }
 
-export {
-  publishGPIO,
-  subscribeToRobotStatus
-}
+export { publishGPIO, subscribeToRobotStatus }

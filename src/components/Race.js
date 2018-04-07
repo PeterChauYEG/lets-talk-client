@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 // lib
 import { publishGPIO } from '../api/sockets'
 
 // components
-import Header from './Header';
-import VideoFeed from './VideoFeed';
+import Header from './Header'
+import VideoFeed from './VideoFeed'
 
 // styles
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -15,29 +15,29 @@ import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown'
 import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
 import faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight'
 import faStop from '@fortawesome/fontawesome-free-solid/faStop'
-import './Race.css';
+import './Race.css'
 
 class Race extends Component {
   componentDidMount () {
     document.addEventListener('keydown', this.handleKeydown.bind(this))
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     document.removeEventListener('keydown', this.handleKeydown.bind(this))
   }
 
-  handleKeydown(event) {
+  handleKeydown (event) {
     let direction
 
     // map key to direction
     switch (event.key) {
       case ' ':
         direction = 'boost'
-        break;
+        break
 
       case 'w':
         direction = 'forward'
-        break;
+        break
 
       case 'd':
         direction = 'right'
@@ -58,55 +58,62 @@ class Race extends Component {
     publishGPIO(direction)
   }
 
-  render() {
+  render () {
     return (
-      <div className="Race">
+      <div className='Race'>
         <Header />
         <VideoFeed
-          className="Race-stream"
-          containerClassName="Race-stream-container" />
-        <div className="Race-control-container-left">
+          className='Race-stream'
+          containerClassName='Race-stream-container'
+        />
+        <div className='Race-control-container-left'>
           <FontAwesomeIcon
-            className="Race-icon"
+            className='Race-icon'
             onClick={() => publishGPIO('forward')}
             icon={faCaretUp}
-            size="4x" />
+            size='4x'
+          />
 
-          <div className="Race-center-control-container">
+          <div className='Race-center-control-container'>
             <FontAwesomeIcon
-              className="Race-icon"
+              className='Race-icon'
               onClick={() => publishGPIO('left')}
               icon={faCaretLeft}
-              size="4x" />
+              size='4x'
+            />
             <FontAwesomeIcon
-              className="Race-icon"
+              className='Race-icon'
               onClick={() => publishGPIO('stop')}
               icon={faStop}
-              size="3x" />
+              size='3x'
+            />
             <FontAwesomeIcon
-              className="Race-icon"
+              className='Race-icon'
               onClick={() => publishGPIO('right')}
               icon={faCaretRight}
-              size="4x" />
+              size='4x'
+            />
           </div>
 
           <FontAwesomeIcon
-            className="Race-icon"
+            className='Race-icon'
             onClick={() => publishGPIO('backward')}
             icon={faCaretDown}
-            size="4x" />
+            size='4x'
+          />
         </div>
 
-        <div className="Race-control-container-right">
+        <div className='Race-control-container-right'>
           <FontAwesomeIcon
-            className="Race-icon"
+            className='Race-icon'
             onClick={() => publishGPIO('boost')}
             icon={faAngleDoubleUp}
-            size="4x" />
+            size='4x'
+          />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Race;
+export default Race
