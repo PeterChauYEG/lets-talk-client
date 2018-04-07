@@ -2,7 +2,7 @@
 import io from 'socket.io-client'
 
 const socket = io(process.env.REACT_APP_WEBSOCKET)
-socket.emit('log message', 'client connected');
+socket.emit('client status', 'connected');
 
 const publishGPIO = (direction) =>  socket.emit('gpio', direction);
 

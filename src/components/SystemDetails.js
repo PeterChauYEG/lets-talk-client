@@ -27,7 +27,7 @@ class SystemDetails extends Component {
         <p className="SystemDetails-robot-status">
           Robot Status: {robotStatus}
         </p>
-        <p className="SystemDetails-current-pilot">
+        {/* <p className="SystemDetails-current-pilot">
           Current Pilot: Username
         </p>
         <p className="SystemDetails-race-time">
@@ -35,7 +35,7 @@ class SystemDetails extends Component {
         </p>
         <p className="SystemDetails-queue-position">
           Queue Position: Not in Queue
-        </p>
+        </p> */}
       </div>
     );
   }

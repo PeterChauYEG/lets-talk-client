@@ -25,7 +25,7 @@ class Header extends Component {
           MMOR
         </h1>
         {this.renderTitle()}
-        <p className="Header-username">Username</p>
+        {/* <p className="Header-username">Username</p> */}
       </header>
     );
   }
