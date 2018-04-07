@@ -1,0 +1,19 @@
+.GPIOButton {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.GPIOButton-icon {
+  color: #000;
+}
+
+.GPIOButton-icon path {
+  /* text-shadow: 0px 0px 3px #fff; */
+  stroke: #fff;
+  stroke-width: 10;
+}
+
+.GPIOButton-icon-active {
+  color: #ff0000;
+}
