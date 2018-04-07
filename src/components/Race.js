@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 
-//redux
-import { store } from '../redux';
-
-// navigation
-import { push } from 'react-router-redux';
-
 // socket
 import io from 'socket.io-client'
 
