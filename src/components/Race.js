@@ -10,7 +10,7 @@ import VideoFeed from './VideoFeed'
 
 // styles
 import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
-import faAngleDoubleUp from '@fortawesome/fontawesome-free-solid/faAngleDoubleUp'
+import faRocket from '@fortawesome/fontawesome-free-solid/faRocket'
 import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown'
 import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
 import faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight'
@@ -47,7 +47,7 @@ class Race extends Component {
         </div>
 
         <div className='Race-control-container-right'>
-          <GPIOButton direction='boost' icon={faAngleDoubleUp} size='4x' />
+          <GPIOButton direction='boost' icon={faRocket} size='3x' />
         </div>
       </div>
     )

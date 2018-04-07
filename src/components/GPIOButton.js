@@ -41,13 +41,23 @@ class GPIOButton extends Component {
     return className
   }
 
+  handleOnClick () {
+    const { direction, disable } = this.props
+
+    if (disable) {
+      return
+    }
+
+    publishGPIO(direction)
+  }
+
   render () {
-    const { direction, icon, size } = this.props
+    const { icon, size } = this.props
 
     return (
       <FontAwesomeIcon
         className={this.handleActive()}
-        onClick={() => publishGPIO(direction)}
+        onClick={() => this.handleOnClick()}
         icon={icon}
         size={size}
       />
