@@ -16,22 +16,21 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './SystemDetails.css'
 
 class SystemDetails extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
-      queuePosition: 'Not in Queue',
       robotStatus: 'unknown'
     }
+
+    const { updateQueuePosition } = this.props
 
     subscribeToQueue((err, queuePosition) => {
       if (err) {
         console.log('error: ' + err)
         return
       }
-      this.setState({
-        queuePosition
-      })
+      updateQueuePosition(queuePosition)
     })
 
     subscribeToRobotStatus((err, robotStatus) => {
@@ -47,7 +46,8 @@ class SystemDetails extends Component {
   }
 
   render () {
-    const { queuePosition, robotStatus } = this.state
+    const { robotStatus } = this.state
+    const { position } = this.props.queue
 
     return (
       <div className='SystemDetails-container'>
@@ -61,7 +61,7 @@ class SystemDetails extends Component {
           Race Time: 00:00
         </p> */}
         <p className='SystemDetails-queue-position'>
-          Queue Position: {queuePosition}
+          Queue Position: {position}
         </p>
         <div className='SystemDetails-GPIO-container'>
           <GPIOButton direction='forward' disable icon={faCaretUp} size='3x' />

@@ -17,7 +17,7 @@ import './index.css'
 
 // components
 import Home from './components/Home'
-import Race from './components/Race'
+import RaceContainer from './components/RaceContainer'
 import Leaderboard from './components/Leaderboard'
 
 // create provider component
@@ -26,7 +26,7 @@ const AppProvider = (
     <ConnectedRouter history={history}>
       <div>
         <Route exact path='/' component={Home} />
-        <Route exact path='/race' component={Race} />
+        <Route exact path='/race' component={RaceContainer} />
         <Route exact path='/leaderboard' component={Leaderboard} />
       </div>
     </ConnectedRouter>

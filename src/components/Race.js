@@ -8,7 +8,7 @@ import { publishQueue } from '../api/sockets'
 
 // components
 import GPIOButton from './GPIOButton'
-import Header from './Header'
+import HeaderContainer from './HeaderContainer'
 import VideoFeed from './VideoFeed'
 
 // styles
@@ -21,6 +21,17 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css'
 
 class Race extends Component {
+  componentWillMount () {
+    const { queue: { position }, push } = this.props
+
+    // check if user is the current pilot
+    if (position === 0) {
+      return
+    }
+
+    push('/')
+  }
+
   componentDidMount () {
     document.addEventListener('keydown', handleKeydown.bind(this))
   }
@@ -34,7 +45,7 @@ class Race extends Component {
   render () {
     return (
       <div className='Race'>
-        <Header />
+        <HeaderContainer />
         <VideoFeed
           className='Race-stream'
           containerClassName='Race-stream-container'

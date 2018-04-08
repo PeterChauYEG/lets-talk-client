@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 // components
-import Header from './Header'
-import Navigation from './Navigation'
-import SystemDetails from './SystemDetails'
+import HeaderContainer from './HeaderContainer'
+import NavigationContainer from './NavigationContainer'
+import SystemDetailsContainer from './SystemDetailsContainer'
 import VideoFeed from './VideoFeed'
 
 // styles
@@ -13,13 +13,13 @@ class Home extends Component {
   render () {
     return (
       <div className='Home'>
-        <Header />
+        <HeaderContainer />
         <VideoFeed
           className='Home-stream'
           containerClassName='Home-stream-container'
         />
-        <SystemDetails />
-        <Navigation />
+        <SystemDetailsContainer />
+        <NavigationContainer />
       </div>
     )
   }
