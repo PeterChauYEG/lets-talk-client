@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 
 // socket
-import { subscribeToQueue, subscribeToRobotStatus } from '../api/sockets'
+import {
+  subscribeToQueue,
+  subscribeToRaceTime,
+  subscribeToRobotStatus
+} from '../api/sockets'
 
 // components
 import GPIOButton from './GPIOButton'
@@ -20,7 +24,8 @@ class SystemDetails extends Component {
     super(props)
 
     this.state = {
-      robotStatus: 'unknown'
+      robotStatus: 'unknown',
+      raceTime: 0
     }
 
     const { updateQueuePosition } = this.props
@@ -31,6 +36,16 @@ class SystemDetails extends Component {
         return
       }
       updateQueuePosition(queuePosition)
+    })
+
+    subscribeToRaceTime((err, raceTime) => {
+      if (err) {
+        console.log('error: ' + err)
+        return
+      }
+      this.setState({
+        raceTime
+      })
     })
 
     subscribeToRobotStatus((err, robotStatus) => {
@@ -46,7 +61,7 @@ class SystemDetails extends Component {
   }
 
   render () {
-    const { robotStatus } = this.state
+    const { robotStatus, raceTime } = this.state
     const { position } = this.props.queue
 
     return (
@@ -56,10 +71,8 @@ class SystemDetails extends Component {
         </p>
         {/* <p className="SystemDetails-current-pilot">
           Current Pilot: Username
-        </p>
-        <p className="SystemDetails-race-time">
-          Race Time: 00:00
         </p> */}
+        <p className='SystemDetails-race-time'>Race Time: {raceTime}</p>
         <p className='SystemDetails-queue-position'>
           Queue Position: {position}
         </p>

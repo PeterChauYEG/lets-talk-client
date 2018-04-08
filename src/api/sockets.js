@@ -19,6 +19,10 @@ const subscribeToQueue = cb => {
   socket.on('queue', queuePosition => cb(null, queuePosition))
 }
 
+const subscribeToRaceTime = cb => {
+  socket.on('race time', raceTime => cb(null, raceTime))
+}
+
 const subscribeToRobotStatus = cb => {
   socket.on('robot status', robotStatus => cb(null, robotStatus))
 }
@@ -28,5 +32,6 @@ export {
   publishQueue,
   subscribeToGPIO,
   subscribeToQueue,
+  subscribeToRaceTime,
   subscribeToRobotStatus
 }
