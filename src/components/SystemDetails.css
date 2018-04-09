@@ -13,13 +13,6 @@
   font-size: 1em;
 }
 
-.SystemDetails-GPIO-container {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 25vw;
-}
-
 .SystemDetails-queue-position {
   font-size: 1em;
 }

@@ -7,17 +7,11 @@ import { handleKeydown } from '../lib/robot'
 import { publishQueue } from '../api/sockets'
 
 // components
-import GPIOButtonContainer from './GPIOButtonContainer'
+import GPIOControlContainer from './GPIOControlContainer'
 import HeaderContainer from './HeaderContainer'
 import VideoFeed from './VideoFeed'
 
 // styles
-import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
-import faRocket from '@fortawesome/fontawesome-free-solid/faRocket'
-import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown'
-import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
-import faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight'
-import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './Race.css'
 
 class Race extends Component {
@@ -50,33 +44,7 @@ class Race extends Component {
           className='Race-stream'
           containerClassName='Race-stream-container'
         />
-        <div className='Race-control-container-left'>
-          <GPIOButtonContainer direction='forward' icon={faCaretUp} size='4x' />
-
-          <div className='Race-center-control-container'>
-            <GPIOButtonContainer
-              direction='left'
-              icon={faCaretLeft}
-              size='4x'
-            />
-            <GPIOButtonContainer direction='stop' icon={faStop} size='3x' />
-            <GPIOButtonContainer
-              direction='right'
-              icon={faCaretRight}
-              size='4x'
-            />
-          </div>
-
-          <GPIOButtonContainer
-            direction='backward'
-            icon={faCaretDown}
-            size='4x'
-          />
-        </div>
-
-        <div className='Race-control-container-right'>
-          <GPIOButtonContainer direction='boost' icon={faRocket} size='3x' />
-        </div>
+        <GPIOControlContainer />
       </div>
     )
   }

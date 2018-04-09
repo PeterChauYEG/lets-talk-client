@@ -1,0 +1,33 @@
+.GPIOControl-container-left {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.GPIOControl-container-right {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.GPIOControl-container-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  height: 200px / 3;
+}
