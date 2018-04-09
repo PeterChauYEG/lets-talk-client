@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 // state management
 import { store, history } from './redux'
 import { Provider } from 'react-redux'
-import { Route } from 'react-router'
+import { Route, Switch } from 'react-router'
 
 // navigation
 import { ConnectedRouter } from 'react-router-redux'
@@ -24,11 +24,11 @@ import Leaderboard from './components/Leaderboard'
 const AppProvider = (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <div>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/race' component={RaceContainer} />
+      <Switch>
+        <Route exact strict path='/' component={Home} />
+        <Route exact strict path='/race' component={RaceContainer} />
         <Route exact path='/leaderboard' component={Leaderboard} />
-      </div>
+      </Switch>
     </ConnectedRouter>
   </Provider>
 )
