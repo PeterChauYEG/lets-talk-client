@@ -7,7 +7,7 @@ import { handleKeydown } from '../lib/robot'
 import { publishQueue } from '../api/sockets'
 
 // components
-import GPIOButton from './GPIOButton'
+import GPIOButtonContainer from './GPIOButtonContainer'
 import HeaderContainer from './HeaderContainer'
 import VideoFeed from './VideoFeed'
 
@@ -51,19 +51,31 @@ class Race extends Component {
           containerClassName='Race-stream-container'
         />
         <div className='Race-control-container-left'>
-          <GPIOButton direction='forward' icon={faCaretUp} size='4x' />
+          <GPIOButtonContainer direction='forward' icon={faCaretUp} size='4x' />
 
           <div className='Race-center-control-container'>
-            <GPIOButton direction='left' icon={faCaretLeft} size='4x' />
-            <GPIOButton direction='stop' icon={faStop} size='3x' />
-            <GPIOButton direction='right' icon={faCaretRight} size='4x' />
+            <GPIOButtonContainer
+              direction='left'
+              icon={faCaretLeft}
+              size='4x'
+            />
+            <GPIOButtonContainer direction='stop' icon={faStop} size='3x' />
+            <GPIOButtonContainer
+              direction='right'
+              icon={faCaretRight}
+              size='4x'
+            />
           </div>
 
-          <GPIOButton direction='backward' icon={faCaretDown} size='4x' />
+          <GPIOButtonContainer
+            direction='backward'
+            icon={faCaretDown}
+            size='4x'
+          />
         </div>
 
         <div className='Race-control-container-right'>
-          <GPIOButton direction='boost' icon={faRocket} size='3x' />
+          <GPIOButtonContainer direction='boost' icon={faRocket} size='3x' />
         </div>
       </div>
     )

@@ -8,7 +8,7 @@ import {
 } from '../api/sockets'
 
 // components
-import GPIOButton from './GPIOButton'
+import GPIOButtonContainer from './GPIOButtonContainer'
 
 // styles
 import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
@@ -77,17 +77,42 @@ class SystemDetails extends Component {
           Queue Position: {position}
         </p>
         <div className='SystemDetails-GPIO-container'>
-          <GPIOButton direction='forward' disable icon={faCaretUp} size='3x' />
-          <GPIOButton direction='left' disable icon={faCaretLeft} size='3x' />
-          <GPIOButton direction='stop' disable icon={faStop} size='2x' />
-          <GPIOButton direction='right' disable icon={faCaretRight} size='3x' />
-          <GPIOButton
+          <GPIOButtonContainer
+            direction='forward'
+            disable
+            icon={faCaretUp}
+            size='3x'
+          />
+          <GPIOButtonContainer
+            direction='left'
+            disable
+            icon={faCaretLeft}
+            size='3x'
+          />
+          <GPIOButtonContainer
+            direction='stop'
+            disable
+            icon={faStop}
+            size='2x'
+          />
+          <GPIOButtonContainer
+            direction='right'
+            disable
+            icon={faCaretRight}
+            size='3x'
+          />
+          <GPIOButtonContainer
             direction='backward'
             disable
             icon={faCaretDown}
             size='3x'
           />
-          <GPIOButton direction='boost' disable icon={faRocket} size='2x' />
+          <GPIOButtonContainer
+            direction='boost'
+            disable
+            icon={faRocket}
+            size='2x'
+          />
         </div>
       </div>
     )

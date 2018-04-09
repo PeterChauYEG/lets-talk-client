@@ -8,35 +8,35 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import './GPIOButton.css'
 
 class GPIOButton extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
       gpioDirection: null
     }
 
-    subscribeToGPIO((err, gpioDirection) => {
+    const { updateGPIO } = this.props
+
+    subscribeToGPIO((err, direction) => {
       if (err) {
         console.log('error: ' + err)
         return
       }
 
-      this.setState({
-        gpioDirection
-      })
+      updateGPIO(direction)
     })
 
+    this.handleActive = this.handleActive.bind(this)
     this.handleOnClick = this.handleOnClick.bind(this)
   }
 
   handleActive () {
-    const { gpioDirection } = this.state
-    const { direction } = this.props
+    const { direction, gpio } = this.props
 
     let className = 'GPIOButton-icon'
 
     // check if null
-    if (gpioDirection === direction) {
+    if (gpio.direction === direction) {
       className = 'GPIOButton-icon-active'
     }
 

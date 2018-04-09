@@ -7,6 +7,7 @@ import { routerReducer, routerMiddleware } from 'react-router-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 // reducers
+import gpio from './gpio'
 import queue from './queue'
 
 // Create a history
@@ -17,6 +18,7 @@ const middleware = routerMiddleware(history)
 
 // combine our reducers into 1
 const reducers = combineReducers({
+  gpio,
   queue,
   router: routerReducer
 })
