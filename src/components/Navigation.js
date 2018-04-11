@@ -13,11 +13,11 @@ class Navigation extends Component {
   }
 
   render () {
-    const { joinQueue, push } = this.props
+    const { handleQueue, push } = this.props
 
     return (
       <div className='Navigation-container'>
-        <div className='Navigation-button' onClick={() => joinQueue()}>
+        <div className='Navigation-button' onClick={() => handleQueue('join')}>
           Join Queue
         </div>
         <div className='Navigation-button' onClick={() => push('/leaderboard')}>

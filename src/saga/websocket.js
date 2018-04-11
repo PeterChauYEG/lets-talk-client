@@ -5,7 +5,7 @@ import { call, fork, put, take } from 'redux-saga/effects'
 import io from 'socket.io-client'
 
 // redux
-import { joinQueue, updateQueuePosition } from '../redux/queue'
+import { handleQueue, updateQueuePosition } from '../redux/queue'
 
 function connectToSocket () {
   const socket = io(process.env.REACT_APP_WEBSOCKET)
@@ -43,8 +43,9 @@ function * read (socket) {
 
 function * write (socket) {
   while (true) {
-    const { payload } = yield take(joinQueue)
-    socket.emit('queue', 'join')
+    const { action } = yield take(handleQueue)
+    console.log({ action })
+    socket.emit('queue', action)
   }
 }
 
@@ -59,7 +60,7 @@ export function * websocket () {
   // Let the api know that this client has connected
   socket.emit('client status', 'connected')
 
-  const task = yield fork(handleIO, socket)
+  yield fork(handleIO, socket)
 }
 
 export default websocket

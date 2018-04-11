@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 
-// api
-import { publishQueue } from '../api/sockets'
-
 // styles
 import './Header.css'
 
@@ -14,11 +11,11 @@ class Header extends Component {
   }
 
   handleClick () {
-    const { queue: { position }, push } = this.props
+    const { handleQueue, queue: { position }, push } = this.props
 
     // check if user is the current pilot
     if (position === 0) {
-      publishQueue('leave')
+      handleQueue('leave')
     }
 
     push('/')

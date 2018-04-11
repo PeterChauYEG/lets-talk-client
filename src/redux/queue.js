@@ -1,12 +1,12 @@
 // actions
-const JOIN_QUEUE = 'JOIN_QUEUE'
+const HANDLE_QUEUE = 'HANDLE_QUEUE'
 const UPDATE_QUEUE_POSITION = 'UPDATE_QUEUE_POSITION'
 
 // action creators
-export function joinQueue (position) {
+export function handleQueue (action) {
   return {
-    type: JOIN_QUEUE,
-    position
+    type: HANDLE_QUEUE,
+    action
   }
 }
 

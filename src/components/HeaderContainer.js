@@ -3,6 +3,7 @@ import Header from './Header'
 
 // redux
 import { connect } from 'react-redux'
+import { handleQueue } from '../redux/queue'
 
 // navigation
 import { push } from 'react-router-redux'
@@ -15,6 +16,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    handleQueue: action => dispatch(handleQueue(action)),
     push: route => dispatch(push(route))
   }
 }

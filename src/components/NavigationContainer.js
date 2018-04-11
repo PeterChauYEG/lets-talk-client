@@ -3,7 +3,7 @@ import Navigation from './Navigation'
 
 // redux
 import { connect } from 'react-redux'
-import { joinQueue } from '../redux/queue'
+import { handleQueue } from '../redux/queue'
 
 // navigation
 import { push } from 'react-router-redux'
@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    joinQueue: () => dispatch(joinQueue()),
+    handleQueue: action => dispatch(handleQueue(action)),
     push: route => dispatch(push(route))
   }
 }
