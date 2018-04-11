@@ -16,7 +16,7 @@ import { unregister } from './registerServiceWorker'
 import './index.css'
 
 // components
-import Home from './components/Home'
+import HomeContainer from './components/HomeContainer'
 import RaceContainer from './components/RaceContainer'
 import Leaderboard from './components/Leaderboard'
 
@@ -25,7 +25,7 @@ const AppProvider = (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route exact strict path='/' component={Home} />
+        <Route exact strict path='/' component={HomeContainer} />
         <Route exact strict path='/race' component={RaceContainer} />
         <Route exact path='/leaderboard' component={Leaderboard} />
       </Switch>

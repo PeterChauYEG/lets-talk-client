@@ -3,7 +3,6 @@ import GPIOControl from './GPIOControl'
 
 // redux
 import { connect } from 'react-redux'
-import { updateGPIO } from '../redux/gpio'
 
 const mapStateToProps = state => {
   return {
@@ -12,9 +11,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    updateGPIO: direction => dispatch(updateGPIO(direction))
-  }
+  return {}
 }
 
 const GPIOControlContainer = connect(mapStateToProps, mapDispatchToProps)(

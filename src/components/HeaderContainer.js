@@ -3,7 +3,6 @@ import Header from './Header'
 
 // redux
 import { connect } from 'react-redux'
-import { updateQueuePosition } from '../redux/queue'
 
 // navigation
 import { push } from 'react-router-redux'
@@ -16,8 +15,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    push: route => dispatch(push(route)),
-    updateQueuePosition: position => dispatch(updateQueuePosition(position))
+    push: route => dispatch(push(route))
   }
 }
 

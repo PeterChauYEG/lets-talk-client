@@ -14,12 +14,11 @@ class Header extends Component {
   }
 
   handleClick () {
-    const { queue: { position }, push, updateQueuePosition } = this.props
+    const { queue: { position }, push } = this.props
 
     // check if user is the current pilot
     if (position === 0) {
       publishQueue('leave')
-      updateQueuePosition('Not in queue')
     }
 
     push('/')

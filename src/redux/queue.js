@@ -1,7 +1,15 @@
 // actions
+const JOIN_QUEUE = 'JOIN_QUEUE'
 const UPDATE_QUEUE_POSITION = 'UPDATE_QUEUE_POSITION'
 
 // action creators
+export function joinQueue (position) {
+  return {
+    type: JOIN_QUEUE,
+    position
+  }
+}
+
 export function updateQueuePosition (position) {
   return {
     type: UPDATE_QUEUE_POSITION,

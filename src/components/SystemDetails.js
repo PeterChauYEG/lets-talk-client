@@ -1,12 +1,5 @@
 import React, { Component } from 'react'
 
-// socket
-import {
-  subscribeToQueue,
-  subscribeToRaceTime,
-  subscribeToRobotStatus
-} from '../api/sockets'
-
 // components
 import GPIOMonitorContainer from './GPIOMonitorContainer'
 
@@ -21,41 +14,10 @@ class SystemDetails extends Component {
       robotStatus: 'unknown',
       raceTime: 0
     }
-
-    const { updateQueuePosition } = this.props
-
-    subscribeToQueue((err, queuePosition) => {
-      if (err) {
-        console.log('error: ' + err)
-        return
-      }
-      updateQueuePosition(queuePosition)
-    })
-
-    subscribeToRaceTime((err, raceTime) => {
-      if (err) {
-        console.log('error: ' + err)
-        return
-      }
-      this.setState({
-        raceTime
-      })
-    })
-
-    subscribeToRobotStatus((err, robotStatus) => {
-      if (err) {
-        console.log('error: ' + err)
-        return
-      }
-
-      this.setState({
-        robotStatus
-      })
-    })
   }
 
   render () {
-    const { robotStatus, raceTime } = this.state
+    const { raceTime, robotStatus } = this.state
     const { position } = this.props.queue
 
     return (

@@ -2,7 +2,6 @@
 import SystemDetails from './SystemDetails'
 
 // redux
-import { updateQueuePosition } from '../redux/queue'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
@@ -12,9 +11,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    updateQueuePosition: position => dispatch(updateQueuePosition(position))
-  }
+  return {}
 }
 
 const SystemDetailsContainer = connect(mapStateToProps, mapDispatchToProps)(

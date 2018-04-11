@@ -1,8 +1,5 @@
 import React, { Component, Fragment } from 'react'
 
-// lib
-import { subscribeToGPIO } from '../api/sockets'
-
 // components
 import GPIOButton from './GPIOButton'
 
@@ -16,21 +13,6 @@ import faStop from '@fortawesome/fontawesome-free-solid/faStop'
 import './GPIOControl.css'
 
 class GPIOControl extends Component {
-  constructor (props) {
-    super(props)
-
-    const { updateGPIO } = this.props
-
-    subscribeToGPIO((err, direction) => {
-      if (err) {
-        console.log('error: ' + err)
-        return
-      }
-
-      updateGPIO(direction)
-    })
-  }
-
   render () {
     const { gpio } = this.props
 

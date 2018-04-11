@@ -1,7 +1,14 @@
 // actions
+export const INITIALIZE_GPIO = 'INITIALIZE_GPIO'
 const UPDATE_GPIO = 'UPDATE_GPIO'
 
 // action creators
+export function initializeGPIO () {
+  return {
+    type: INITIALIZE_GPIO
+  }
+}
+
 export function updateGPIO (direction) {
   return {
     type: UPDATE_GPIO,

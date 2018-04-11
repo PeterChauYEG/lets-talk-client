@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 
-// api
-import { publishQueue } from '../api/sockets'
-
 // styles
 import './Navigation.css'
 
@@ -16,11 +13,11 @@ class Navigation extends Component {
   }
 
   render () {
-    const { push } = this.props
+    const { joinQueue, push } = this.props
 
     return (
       <div className='Navigation-container'>
-        <div className='Navigation-button' onClick={() => publishQueue('join')}>
+        <div className='Navigation-button' onClick={() => joinQueue()}>
           Join Queue
         </div>
         <div className='Navigation-button' onClick={() => push('/leaderboard')}>
