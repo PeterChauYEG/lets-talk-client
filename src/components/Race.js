@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { handleKey } from '../lib/robot'
 
 // components
-import GPIOControlContainer from '../containers/GPIOControlContainer'
+import GPIOControl from './GPIOControl'
 import HeaderContainer from '../containers/HeaderContainer'
 import VideoFeed from './VideoFeed'
 
@@ -53,7 +53,7 @@ class Race extends Component {
           className='Race-stream'
           containerClassName='Race-stream-container'
         />
-        <GPIOControlContainer />
+        <GPIOControl />
       </div>
     )
   }

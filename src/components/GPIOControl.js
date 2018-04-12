@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 
 // components
-import GPIOButton from './GPIOButton'
+import GPIOButtonContainer from '../containers/GPIOButtonContainer'
 
 // styles
 import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
@@ -14,60 +14,30 @@ import './css/GPIOControl.css'
 
 class GPIOControl extends Component {
   render () {
-    const { gpio, handleGPIO } = this.props
-
     return (
       <Fragment>
         <div className='GPIOControl-container-left'>
-          <GPIOButton
-            command='forward'
-            gpio={gpio}
-            handleGPIO={handleGPIO}
-            icon={faCaretUp}
-            size='4x'
-          />
+          <GPIOButtonContainer command='forward' icon={faCaretUp} size='4x' />
 
           <div className='GPIOControl-container-center'>
-            <GPIOButton
-              command='left'
-              gpio={gpio}
-              handleGPIO={handleGPIO}
-              icon={faCaretLeft}
-              size='4x'
-            />
-            <GPIOButton
-              command='stop'
-              gpio={gpio}
-              handleGPIO={handleGPIO}
-              icon={faStop}
-              size='3x'
-            />
-            <GPIOButton
+            <GPIOButtonContainer command='left' icon={faCaretLeft} size='4x' />
+            <GPIOButtonContainer command='stop' icon={faStop} size='3x' />
+            <GPIOButtonContainer
               command='right'
-              gpio={gpio}
-              handleGPIO={handleGPIO}
               icon={faCaretRight}
               size='4x'
             />
           </div>
 
-          <GPIOButton
+          <GPIOButtonContainer
             command='backward'
-            gpio={gpio}
-            handleGPIO={handleGPIO}
             icon={faCaretDown}
             size='4x'
           />
         </div>
 
         <div className='GPIOControl-container-right'>
-          <GPIOButton
-            command='boost'
-            gpio={gpio}
-            handleGPIO={handleGPIO}
-            icon={faRocket}
-            size='3x'
-          />
+          <GPIOButtonContainer command='boost' icon={faRocket} size='3x' />
         </div>
       </Fragment>
     )

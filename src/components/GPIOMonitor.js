@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // components
-import GPIOButton from './GPIOButton'
+import GPIOButtonContainer from '../containers/GPIOButtonContainer'
 
 // styles
 import faCaretUp from '@fortawesome/fontawesome-free-solid/faCaretUp'
@@ -14,49 +14,36 @@ import './css/GPIOMonitor.css'
 
 class GPIOMonitor extends Component {
   render () {
-    const { gpio } = this.props
-
     return (
       <div className='GPIOMonitor-container'>
-        <GPIOButton
+        <GPIOButtonContainer
           command='forward'
           disable
-          gpio={gpio}
           icon={faCaretUp}
           size='3x'
         />
-        <GPIOButton
+        <GPIOButtonContainer
           command='left'
           disable
-          gpio={gpio}
           icon={faCaretLeft}
           size='3x'
         />
-        <GPIOButton
-          command='stop'
-          disable
-          gpio={gpio}
-          icon={faStop}
-          size='2x'
-        />
-        <GPIOButton
+        <GPIOButtonContainer command='stop' disable icon={faStop} size='2x' />
+        <GPIOButtonContainer
           command='right'
           disable
-          gpio={gpio}
           icon={faCaretRight}
           size='3x'
         />
-        <GPIOButton
+        <GPIOButtonContainer
           command='backward'
           disable
-          gpio={gpio}
           icon={faCaretDown}
           size='3x'
         />
-        <GPIOButton
+        <GPIOButtonContainer
           command='boost'
           disable
-          gpio={gpio}
           icon={faRocket}
           size='2x'
         />

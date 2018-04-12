@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // components
-import GPIOMonitorContainer from '../containers/GPIOMonitorContainer'
+import GPIOMonitor from './GPIOMonitor'
 
 // styles
 import './css/SystemDetails.css'
@@ -29,7 +29,7 @@ class SystemDetails extends Component {
         <p className='SystemDetails-queue-position'>
           Queue Position: {position}
         </p>
-        <GPIOMonitorContainer />
+        <GPIOMonitor />
       </div>
     )
   }
