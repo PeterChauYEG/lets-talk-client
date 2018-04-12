@@ -11,20 +11,17 @@ class SystemDetails extends Component {
     super(props)
 
     this.state = {
-      robotStatus: 'unknown',
       raceTime: 0
     }
   }
 
   render () {
-    const { raceTime, robotStatus } = this.state
-    const { position } = this.props.queue
+    const { raceTime } = this.state
+    const { queue: { position }, robot: { status } } = this.props
 
     return (
       <div className='SystemDetails-container'>
-        <p className='SystemDetails-robot-status'>
-          Robot Status: {robotStatus}
-        </p>
+        <p className='SystemDetails-robot-status'>Robot Status: {status}</p>
         {/* <p className="SystemDetails-current-pilot">
           Current Pilot: Username
         </p> */}

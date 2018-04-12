@@ -6,6 +6,7 @@ import io from 'socket.io-client'
 
 // redux
 import { handleQueue, updateQueuePosition } from '../redux/queue'
+import { updateRobotStatus } from '../redux/robot'
 
 function connectToSocket () {
   const socket = io(process.env.REACT_APP_WEBSOCKET)
@@ -18,13 +19,21 @@ function connectToSocket () {
 }
 
 function subscribeToSocket (socket) {
-  let counter = 'Not in queue'
+  let queueCounter = 'Not in queue'
+  let statusCounter = 'Unknown'
 
   return eventChannel(emit => {
     socket.on('queue', position => {
-      if (counter !== position) {
-        counter = position
+      if (queueCounter !== position) {
+        queueCounter = position
         emit(updateQueuePosition(position))
+      }
+    })
+
+    socket.on('robot status', status => {
+      if (statusCounter !== status) {
+        statusCounter = status
+        emit(updateRobotStatus(status))
       }
     })
 
@@ -44,7 +53,6 @@ function * read (socket) {
 function * write (socket) {
   while (true) {
     const { action } = yield take(handleQueue)
-    console.log({ action })
     socket.emit('queue', action)
   }
 }

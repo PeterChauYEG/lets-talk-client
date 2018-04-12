@@ -13,6 +13,7 @@ import sagas from '../saga'
 // reducers
 import gpio from './gpio'
 import queue from './queue'
+import robot from './robot'
 
 // Create a history
 export const history = createHistory()
@@ -25,6 +26,7 @@ const sagaMiddleware = createSagaMiddleware()
 const reducers = combineReducers({
   gpio,
   queue,
+  robot,
   router: routerReducer
 })
 
