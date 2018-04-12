@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // styles
-import './Navigation.css'
+import './css/Navigation.css'
 
 class Navigation extends Component {
   componentDidUpdate () {

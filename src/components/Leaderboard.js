@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import './Leaderboard.css'
+
+// styles
+import './css/Leaderboard.css'
 
 // components
 import Header from './Header'

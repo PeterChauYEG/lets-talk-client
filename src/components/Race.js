@@ -12,7 +12,7 @@ import HeaderContainer from './HeaderContainer'
 import VideoFeed from './VideoFeed'
 
 // styles
-import './Race.css'
+import './css/Race.css'
 
 class Race extends Component {
   componentWillMount () {

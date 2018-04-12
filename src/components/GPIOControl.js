@@ -10,7 +10,7 @@ import faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown'
 import faCaretLeft from '@fortawesome/fontawesome-free-solid/faCaretLeft'
 import faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight'
 import faStop from '@fortawesome/fontawesome-free-solid/faStop'
-import './GPIOControl.css'
+import './css/GPIOControl.css'
 
 class GPIOControl extends Component {
   render () {

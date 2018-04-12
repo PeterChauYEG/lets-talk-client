@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import GPIOMonitorContainer from './GPIOMonitorContainer'
 
 // styles
-import './SystemDetails.css'
+import './css/SystemDetails.css'
 
 class SystemDetails extends Component {
   constructor (props) {

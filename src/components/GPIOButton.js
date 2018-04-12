@@ -5,7 +5,7 @@ import { publishGPIO } from '../api/sockets'
 
 // styles
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import './GPIOButton.css'
+import './css/GPIOButton.css'
 
 class GPIOButton extends Component {
   constructor (props) {
