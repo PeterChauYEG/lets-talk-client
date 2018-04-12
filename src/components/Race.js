@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 
 // lib
-import { handleKeydown } from '../lib/robot'
-
-// api
-import { publishQueue } from '../api/sockets'
+import { handleKey } from '../lib/robot'
 
 // components
 import GPIOControlContainer from '../containers/GPIOControlContainer'
@@ -15,6 +12,12 @@ import VideoFeed from './VideoFeed'
 import './css/Race.css'
 
 class Race extends Component {
+  constructor () {
+    super()
+
+    this.handleKeydown = this.handleKeydown.bind(this)
+  }
+
   componentWillMount () {
     const { queue: { position }, push } = this.props
 
@@ -27,13 +30,19 @@ class Race extends Component {
   }
 
   componentDidMount () {
-    document.addEventListener('keydown', handleKeydown.bind(this))
+    document.addEventListener('keydown', this.handleKeydown)
   }
 
   componentWillUnmount () {
-    document.removeEventListener('keydown', handleKeydown.bind(this))
+    document.removeEventListener('keydown', this.handleKeydown)
+  }
 
-    publishQueue('leave')
+  handleKeydown (event) {
+    const { handleGPIO } = this.props
+    const { key } = event
+
+    const direction = handleKey(key)
+    handleGPIO(direction)
   }
 
   render () {

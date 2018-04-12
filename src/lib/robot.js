@@ -1,11 +1,8 @@
-// api
-import { publishGPIO } from '../api/sockets'
-
-const handleKeydown = event => {
+const handleKey = key => {
   let direction
 
   // map key to direction
-  switch (event.key) {
+  switch (key) {
     case ' ':
       direction = 'boost'
       break
@@ -26,8 +23,7 @@ const handleKeydown = event => {
       direction = 'stop'
   }
 
-  // send the keypress event mapped to direction to API
-  publishGPIO(direction)
+  return direction
 }
 
-export { handleKeydown }
+export { handleKey }
