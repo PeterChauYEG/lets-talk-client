@@ -7,8 +7,8 @@ import { handleKeydown } from '../lib/robot'
 import { publishQueue } from '../api/sockets'
 
 // components
-import GPIOControlContainer from './GPIOControlContainer'
-import HeaderContainer from './HeaderContainer'
+import GPIOControlContainer from '../containers/GPIOControlContainer'
+import HeaderContainer from '../containers/HeaderContainer'
 import VideoFeed from './VideoFeed'
 
 // styles

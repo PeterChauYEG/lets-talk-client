@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // components
-import GPIOMonitorContainer from './GPIOMonitorContainer'
+import GPIOMonitorContainer from '../containers/GPIOMonitorContainer'
 
 // styles
 import './css/SystemDetails.css'

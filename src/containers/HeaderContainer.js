@@ -1,8 +1,9 @@
 // components
-import Race from './Race'
+import Header from '../components/Header'
 
 // redux
 import { connect } from 'react-redux'
+import { handleQueue } from '../redux/queue'
 
 // navigation
 import { push } from 'react-router-redux'
@@ -15,10 +16,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    handleQueue: action => dispatch(handleQueue(action)),
     push: route => dispatch(push(route))
   }
 }
 
-const RaceContainer = connect(mapStateToProps, mapDispatchToProps)(Race)
+const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header)
 
-export default RaceContainer
+export default HeaderContainer

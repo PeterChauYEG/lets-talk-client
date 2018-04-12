@@ -1,5 +1,5 @@
 // components
-import SystemDetails from './SystemDetails'
+import SystemDetails from '../components/SystemDetails'
 
 // redux
 import { connect } from 'react-redux'

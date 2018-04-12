@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 // components
-import HeaderContainer from './HeaderContainer'
-import NavigationContainer from './NavigationContainer'
-import SystemDetailsContainer from './SystemDetailsContainer'
+import HeaderContainer from '../containers/HeaderContainer'
+import NavigationContainer from '../containers/NavigationContainer'
+import SystemDetailsContainer from '../containers/SystemDetailsContainer'
 import VideoFeed from './VideoFeed'
 
 // styles

@@ -1,5 +1,5 @@
 // components
-import Home from './Home'
+import Home from '../components/Home'
 
 // redux
 import { connect } from 'react-redux'

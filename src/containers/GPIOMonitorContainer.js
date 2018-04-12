@@ -1,5 +1,5 @@
 // components
-import GPIOControl from './GPIOControl'
+import GPIOMonitor from '../components/GPIOMonitor'
 
 // redux
 import { connect } from 'react-redux'
@@ -14,8 +14,8 @@ const mapDispatchToProps = dispatch => {
   return {}
 }
 
-const GPIOControlContainer = connect(mapStateToProps, mapDispatchToProps)(
-  GPIOControl
+const GPIOMonitorContainer = connect(mapStateToProps, mapDispatchToProps)(
+  GPIOMonitor
 )
 
-export default GPIOControlContainer
+export default GPIOMonitorContainer

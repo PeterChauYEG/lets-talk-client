@@ -16,8 +16,8 @@ import { unregister } from './registerServiceWorker'
 import './index.css'
 
 // components
-import HomeContainer from './components/HomeContainer'
-import RaceContainer from './components/RaceContainer'
+import HomeContainer from './containers/HomeContainer'
+import RaceContainer from './containers/RaceContainer'
 import Leaderboard from './components/Leaderboard'
 
 // create provider component

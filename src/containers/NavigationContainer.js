@@ -1,5 +1,5 @@
 // components
-import Navigation from './Navigation'
+import Navigation from '../components/Navigation'
 
 // redux
 import { connect } from 'react-redux'
