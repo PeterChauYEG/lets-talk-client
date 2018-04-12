@@ -19,42 +19,42 @@ class GPIOMonitor extends Component {
     return (
       <div className='GPIOMonitor-container'>
         <GPIOButton
-          direction='forward'
+          command='forward'
           disable
           gpio={gpio}
           icon={faCaretUp}
           size='3x'
         />
         <GPIOButton
-          direction='left'
+          command='left'
           disable
           gpio={gpio}
           icon={faCaretLeft}
           size='3x'
         />
         <GPIOButton
-          direction='stop'
+          command='stop'
           disable
           gpio={gpio}
           icon={faStop}
           size='2x'
         />
         <GPIOButton
-          direction='right'
+          command='right'
           disable
           gpio={gpio}
           icon={faCaretRight}
           size='3x'
         />
         <GPIOButton
-          direction='backward'
+          command='backward'
           disable
           gpio={gpio}
           icon={faCaretDown}
           size='3x'
         />
         <GPIOButton
-          direction='boost'
+          command='boost'
           disable
           gpio={gpio}
           icon={faRocket}

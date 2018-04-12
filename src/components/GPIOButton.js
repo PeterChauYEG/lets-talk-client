@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 
-// lib
-import { publishGPIO } from '../api/sockets'
-
 // styles
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import './css/GPIOButton.css'
@@ -16,12 +13,12 @@ class GPIOButton extends Component {
   }
 
   handleActive () {
-    const { direction, gpio } = this.props
+    const { command, gpio } = this.props
 
     let className = 'GPIOButton-icon'
 
     // check if null
-    if (gpio.direction === direction) {
+    if (gpio.command === command) {
       className = 'GPIOButton-icon-active'
     }
 
@@ -29,13 +26,13 @@ class GPIOButton extends Component {
   }
 
   handleOnClick () {
-    const { direction, disable } = this.props
+    const { command, disable, handleGPIO } = this.props
 
     if (disable) {
       return
     }
 
-    publishGPIO(direction)
+    handleGPIO(command)
   }
 
   render () {

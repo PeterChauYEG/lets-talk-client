@@ -1,24 +1,25 @@
 // actions
-export const INITIALIZE_GPIO = 'INITIALIZE_GPIO'
+const HANDLE_GPIO = 'HANDLE_GPIO'
 const UPDATE_GPIO = 'UPDATE_GPIO'
 
 // action creators
-export function initializeGPIO () {
+export function handleGPIO (command) {
   return {
-    type: INITIALIZE_GPIO
+    type: HANDLE_GPIO,
+    command
   }
 }
 
-export function updateGPIO (direction) {
+export function updateGPIO (command) {
   return {
     type: UPDATE_GPIO,
-    direction
+    command
   }
 }
 
 // initialState
 const initialState = {
-  direction: null
+  command: null
 }
 
 // reducers
@@ -27,7 +28,7 @@ function gpio (state = initialState, action) {
     case UPDATE_GPIO:
       return {
         ...state,
-        direction: action.direction
+        command: action.command
       }
     default:
       return state

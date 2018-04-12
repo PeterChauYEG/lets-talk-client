@@ -5,6 +5,7 @@ import { call, fork, put, take } from 'redux-saga/effects'
 import io from 'socket.io-client'
 
 // redux
+import { handleGPIO, updateGPIO } from '../redux/gpio'
 import { handleQueue, updateQueuePosition } from '../redux/queue'
 import { updateRobotStatus } from '../redux/robot'
 
@@ -19,10 +20,18 @@ function connectToSocket () {
 }
 
 function subscribeToSocket (socket) {
+  let gpioCounter = null
   let queueCounter = 'Not in queue'
   let statusCounter = 'Unknown'
 
   return eventChannel(emit => {
+    socket.on('gpio', command => {
+      if (gpioCounter !== command) {
+        gpioCounter = command
+        emit(updateGPIO(command))
+      }
+    })
+
     socket.on('queue', position => {
       if (queueCounter !== position) {
         queueCounter = position
@@ -50,16 +59,30 @@ function * read (socket) {
   }
 }
 
-function * write (socket) {
+function * writeGPIO (socket) {
+  while (true) {
+    const { command } = yield take(handleGPIO)
+
+    if (command) {
+      socket.emit('gpio', command)
+    }
+  }
+}
+
+function * writeQueue (socket) {
   while (true) {
     const { action } = yield take(handleQueue)
-    socket.emit('queue', action)
+
+    if (action) {
+      socket.emit('queue', action)
+    }
   }
 }
 
 function * handleIO (socket) {
   yield fork(read, socket)
-  yield fork(write, socket)
+  yield fork(writeGPIO, socket)
+  yield fork(writeQueue, socket)
 }
 
 export function * websocket () {

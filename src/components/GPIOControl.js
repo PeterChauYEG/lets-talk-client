@@ -14,44 +14,60 @@ import './css/GPIOControl.css'
 
 class GPIOControl extends Component {
   render () {
-    const { gpio } = this.props
+    const { gpio, handleGPIO } = this.props
 
     return (
       <Fragment>
         <div className='GPIOControl-container-left'>
           <GPIOButton
-            direction='forward'
+            command='forward'
             gpio={gpio}
+            handleGPIO={handleGPIO}
             icon={faCaretUp}
             size='4x'
           />
 
           <div className='GPIOControl-container-center'>
             <GPIOButton
-              direction='left'
+              command='left'
               gpio={gpio}
+              handleGPIO={handleGPIO}
               icon={faCaretLeft}
               size='4x'
             />
-            <GPIOButton direction='stop' gpio={gpio} icon={faStop} size='3x' />
             <GPIOButton
-              direction='right'
+              command='stop'
               gpio={gpio}
+              handleGPIO={handleGPIO}
+              icon={faStop}
+              size='3x'
+            />
+            <GPIOButton
+              command='right'
+              gpio={gpio}
+              handleGPIO={handleGPIO}
               icon={faCaretRight}
               size='4x'
             />
           </div>
 
           <GPIOButton
-            direction='backward'
+            command='backward'
             gpio={gpio}
+            handleGPIO={handleGPIO}
             icon={faCaretDown}
             size='4x'
           />
         </div>
 
         <div className='GPIOControl-container-right'>
-          <GPIOButton direction='boost' gpio={gpio} icon={faRocket} size='3x' />
+          <GPIOButton
+            command='boost'
+            gpio={gpio}
+            handleGPIO={handleGPIO}
+            icon={faRocket}
+            size='3x'
+          />
         </div>
       </Fragment>
     )
