@@ -7,6 +7,7 @@ import io from 'socket.io-client'
 // redux
 import { handleGPIO, updateGPIO } from '../redux/gpio'
 import { handleQueue, updateQueuePosition } from '../redux/queue'
+import { updateRaceTime } from '../redux/race'
 import { updateRobotStatus } from '../redux/robot'
 
 function connectToSocket () {
@@ -23,6 +24,7 @@ function subscribeToSocket (socket) {
   let gpioCounter = null
   let queueCounter = 'Not in queue'
   let statusCounter = 'Unknown'
+  let timeCounter = 0
 
   return eventChannel(emit => {
     socket.on('gpio', command => {
@@ -36,6 +38,13 @@ function subscribeToSocket (socket) {
       if (queueCounter !== position) {
         queueCounter = position
         emit(updateQueuePosition(position))
+      }
+    })
+
+    socket.on('race time', time => {
+      if (timeCounter !== time) {
+        timeCounter = time
+        emit(updateRaceTime(time))
       }
     })
 

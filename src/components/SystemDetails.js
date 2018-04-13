@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import moment from 'moment'
 
 // components
 import GPIOMonitor from './GPIOMonitor'
@@ -7,16 +8,21 @@ import GPIOMonitor from './GPIOMonitor'
 import './css/SystemDetails.css'
 
 class SystemDetails extends Component {
-  constructor (props) {
-    super(props)
+  renderTime () {
+    const { race: { time } } = this.props
 
-    this.state = {
-      raceTime: 0
-    }
+    // convert the time in seconds to a datetime
+    const timeToDatetime = moment()
+      .startOf('day')
+      .seconds(time)
+
+    // format it to minutes and seconds
+    const formattedTime = moment(timeToDatetime).format('mm:ss')
+
+    return formattedTime
   }
 
   render () {
-    const { raceTime } = this.state
     const { queue: { position }, robot: { status } } = this.props
 
     return (
@@ -25,7 +31,9 @@ class SystemDetails extends Component {
         {/* <p className="SystemDetails-current-pilot">
           Current Pilot: Username
         </p> */}
-        <p className='SystemDetails-race-time'>Race Time: {raceTime}</p>
+        <p className='SystemDetails-race-time'>
+          Race Time: {this.renderTime()}
+        </p>
         <p className='SystemDetails-queue-position'>
           Queue Position: {position}
         </p>

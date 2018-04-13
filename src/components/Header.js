@@ -28,6 +28,7 @@ class Header extends Component {
       return <p className='Header-title'>{title}</p>
     }
   }
+
   render () {
     return (
       <header className='Header-container'>
