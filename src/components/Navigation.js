@@ -17,7 +17,12 @@ class Navigation extends Component {
 
     return (
       <div className='Navigation-container'>
-        <div className='Navigation-button' onClick={() => handleQueue('join')}>
+        <div
+          className='Navigation-button'
+          onClick={() => {
+            handleQueue('join')
+          }}
+        >
           Join Queue
         </div>
         <div className='Navigation-button' onClick={() => push('/leaderboard')}>

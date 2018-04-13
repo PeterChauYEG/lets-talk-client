@@ -1,6 +1,6 @@
 // actions
 const HANDLE_QUEUE = 'HANDLE_QUEUE'
-const UPDATE_QUEUE_POSITION = 'UPDATE_QUEUE_POSITION'
+export const UPDATE_QUEUE_POSITION = 'UPDATE_QUEUE_POSITION'
 
 // action creators
 export function handleQueue (action) {
