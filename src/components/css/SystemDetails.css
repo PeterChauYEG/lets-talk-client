@@ -17,23 +17,24 @@
 .SystemDetails-robot-status {
 }
 
-.SystemDetails-stats {
-  background-color: transparent;
-}
 
 /* Large devces */
 @media only screen and (min-width: 992px) {
   .SystemDetails-container {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 32px;
-  }
-
-  .SystemDetails-stats {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .SystemDetails-queue-position {
+  }
+
+  .SystemDetails-race-time {
+    margin-bottom: 16px;
+  }
+
+  .SystemDetails-robot-status {
+    margin-bottom: 16px;
   }
 }

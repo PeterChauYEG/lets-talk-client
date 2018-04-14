@@ -49,8 +49,14 @@ class GPIOButton extends Component {
   }
 
   renderButton () {
+    const { disable } = this.props
+
     return (
-      <button className={'GPIOButton-button'} onClick={this.handleOnClick}>
+      <button
+        className={'GPIOButton-button'}
+        disabled={disable}
+        onClick={this.handleOnClick}
+      >
         <p>BOOST</p>
       </button>
     )

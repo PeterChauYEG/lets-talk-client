@@ -16,37 +16,51 @@ class GPIOMonitor extends Component {
   render () {
     return (
       <div className='GPIOMonitor-container'>
-        <GPIOButtonContainer
-          command='forward'
-          disable
-          icon={faCaretUp}
-          size='3x'
-        />
-        <GPIOButtonContainer
-          command='left'
-          disable
-          icon={faCaretLeft}
-          size='3x'
-        />
-        <GPIOButtonContainer command='stop' disable icon={faStop} size='2x' />
-        <GPIOButtonContainer
-          command='right'
-          disable
-          icon={faCaretRight}
-          size='3x'
-        />
-        <GPIOButtonContainer
-          command='backward'
-          disable
-          icon={faCaretDown}
-          size='3x'
-        />
-        <GPIOButtonContainer
-          command='boost'
-          disable
-          icon={faRocket}
-          size='2x'
-        />
+        <div className='GPIOMonitor-container-left'>
+          <GPIOButtonContainer
+            command='forward'
+            disable
+            icon={faCaretUp}
+            size='4x'
+          />
+
+          <div className='GPIOMonitor-container-center'>
+            <GPIOButtonContainer
+              command='left'
+              disable
+              icon={faCaretLeft}
+              size='4x'
+            />
+            <GPIOButtonContainer
+              command='stop'
+              disable
+              icon={faStop}
+              size='3x'
+            />
+            <GPIOButtonContainer
+              command='right'
+              disable
+              icon={faCaretRight}
+              size='4x'
+            />
+          </div>
+
+          <GPIOButtonContainer
+            command='backward'
+            disable
+            icon={faCaretDown}
+            size='4x'
+          />
+        </div>
+
+        <div className='GPIOMonitor-container-right'>
+          <GPIOButtonContainer
+            command='boost'
+            disable
+            icon={faRocket}
+            size='3x'
+          />
+        </div>
       </div>
     )
   }

@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 
-// components
-import GPIOMonitor from './GPIOMonitor'
-
 // styles
 import './css/SystemDetails.css'
 
@@ -27,19 +24,16 @@ class SystemDetails extends Component {
 
     return (
       <div className='SystemDetails-container'>
-        <div className='SystemDetails-stats'>
-          <p className='SystemDetails-robot-status'>Robot Status: {status}</p>
-          {/* <p className="SystemDetails-current-pilot">
-            Current Pilot: Username
-          </p> */}
-          <p className='SystemDetails-race-time'>
-            Time Remaining: {this.renderTime()}
-          </p>
-          <p className='SystemDetails-queue-position'>
-            Queue Position: {position}
-          </p>
-        </div>
-        <GPIOMonitor />
+        <p className='SystemDetails-robot-status'>Robot Status: {status}</p>
+        {/* <p className="SystemDetails-current-pilot">
+          Current Pilot: Username
+        </p> */}
+        <p className='SystemDetails-race-time'>
+          Time Remaining: {this.renderTime()}
+        </p>
+        <p className='SystemDetails-queue-position'>
+          Queue Position: {position}
+        </p>
       </div>
     )
   }
