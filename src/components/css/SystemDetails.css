@@ -26,18 +26,19 @@
   .SystemDetails-container {
     align-items: flex-start;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 16px;
+    width: 33vw;
   }
 
   .SystemDetails-queue-position {
-  }
-
-  .SystemDetails-race-time {
-    margin-bottom: 16px;
+    font-size: 1.25em;
   }
 
   .SystemDetails-robot-status {
+    font-size: 1.25em;
     margin-bottom: 16px;
   }
 }

@@ -34,14 +34,17 @@
 /* Large devces */
 @media only screen and (min-width: 992px) {
   .Navigation-container {
+    flex-direction: row;
     justify-content: flex-start;
     padding: 32px 0;
   }
 
   .Navigation-button {
-    width: 300px;
-    padding: 16px;
+    height: 50px;
+    margin-top: 0;
     margin-right: 32px;
+    padding: 16px;
+    width: 300px;
   }
 
   .Navigation-button:focus p {

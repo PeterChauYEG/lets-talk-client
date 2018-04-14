@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 
 // components
 import GPIOButtonContainer from '../containers/GPIOButtonContainer'
@@ -15,7 +15,7 @@ import './css/GPIOControl.css'
 class GPIOControl extends Component {
   render () {
     return (
-      <Fragment>
+      <div className='GPIOControl-container'>
         <div className='GPIOControl-container-left'>
           <GPIOButtonContainer command='forward' icon={faCaretUp} size='4x' />
 
@@ -39,7 +39,7 @@ class GPIOControl extends Component {
         <div className='GPIOControl-container-right'>
           <GPIOButtonContainer command='boost' icon={faRocket} size='3x' />
         </div>
-      </Fragment>
+      </div>
     )
   }
 }

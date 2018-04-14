@@ -1,8 +1,7 @@
 .GPIOButton-button {
   background-color: #D8D8D8;
   border-width: 0;
-  padding: 8px;
-  width: 33vw;
+  padding: 8px 16px;
 }
 
 .GPIOButton-button:focus {
@@ -25,8 +24,7 @@
 .GPIOButton-button-active {
   background-color: #5F5F5F;
   border-width: 0;
-  padding: 8px;
-  width: 33vw;
+  padding: 8px 16px;
 }
 
 .GPIOButton-button-active:focus {
@@ -63,4 +61,17 @@
 .GPIOButton-icon-active path {
   stroke-width: 10;
   stroke: #FFF6F6;
+}
+
+/* Large devces */
+@media only screen and (min-width: 992px) {
+  .GPIOButton-button {
+    padding: 16px 32px;
+  }
+
+  .GPIOButton-button-active {
+    background-color: #5F5F5F;
+    border-width: 0;
+    padding: 16px 32px;
+  }
 }
