@@ -1,0 +1,10 @@
+.RaceTimer-race-time {
+}
+
+
+/* Large devces */
+@media only screen and (min-width: 992px) {
+  .RaceTimer-race-time {
+    margin-bottom: 16px;
+  }
+}

@@ -1,8 +1,11 @@
 const handleKey = key => {
   let direction
 
+  // handle various cases
+  const lowerKey = key.toLowerCase()
+
   // map key to direction
-  switch (key) {
+  switch (lowerKey) {
     case ' ':
       direction = 'boost'
       break

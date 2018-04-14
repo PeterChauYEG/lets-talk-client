@@ -12,17 +12,17 @@ class GPIOButton extends Component {
     this.handleOnClick = this.handleOnClick.bind(this)
   }
 
-  handleActive () {
+  handleActive (className) {
     const { command, gpio } = this.props
 
-    let className = 'GPIOButton-icon'
+    let result = className
 
     // check if null
     if (gpio.command === command) {
-      className = 'GPIOButton-icon-active'
+      result = result + '-active'
     }
 
-    return className
+    return result
   }
 
   handleOnClick () {
@@ -40,7 +40,7 @@ class GPIOButton extends Component {
 
     return (
       <FontAwesomeIcon
-        className={this.handleActive()}
+        className={this.handleActive('GPIOButton-icon')}
         onClick={this.handleOnClick}
         icon={icon}
         size={size}
@@ -53,7 +53,7 @@ class GPIOButton extends Component {
 
     return (
       <button
-        className={'GPIOButton-button'}
+        className={this.handleActive('GPIOButton-button')}
         disabled={disable}
         onClick={this.handleOnClick}
       >

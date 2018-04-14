@@ -22,6 +22,29 @@
   background-color: #D8D8D8;
 }
 
+.GPIOButton-button-active {
+  background-color: #5F5F5F;
+  border-width: 0;
+  padding: 8px;
+  width: 33vw;
+}
+
+.GPIOButton-button-active:focus {
+  outline-color: #DE9C9C;
+}
+
+.GPIOButton-button-active:focus {
+  background-color: #5F5F5F;
+}
+
+.GPIOButton-button-active:focus p {
+  color: #FFDFDF;
+}
+
+.GPIOButton-button-active p {
+  color: #FFDFDF;
+}
+
 .GPIOButton-icon {
   background-color: transparent;
   color: #D8D8D8;

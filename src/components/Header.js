@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// container
+import RaceTimerContainer from '../containers/RaceTimerContainer'
+
 // styles
 import './css/Header.css'
 
@@ -21,6 +24,14 @@ class Header extends Component {
     push('/')
   }
 
+  renderRaceTimer () {
+    const { router: { location: { pathname } } } = this.props
+
+    if (pathname === '/race') {
+      return <RaceTimerContainer className={'Header-race-timer'} />
+    }
+  }
+
   renderTitle () {
     const { title } = this.props
 
@@ -36,6 +47,7 @@ class Header extends Component {
           Lets Talk
         </h1>
         {this.renderTitle()}
+        {this.renderRaceTimer()}
         <h1 className='Header-username'>Username</h1>
       </header>
     )

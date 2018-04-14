@@ -1,24 +1,12 @@
 import React, { Component } from 'react'
-import moment from 'moment'
+
+// container
+import RaceTimerContainer from '../containers/RaceTimerContainer'
 
 // styles
 import './css/SystemDetails.css'
 
 class SystemDetails extends Component {
-  renderTime () {
-    const { race: { time } } = this.props
-
-    // convert the time in seconds to a datetime
-    const timeToDatetime = moment()
-      .startOf('day')
-      .seconds(time)
-
-    // format it to minutes and seconds
-    const formattedTime = moment(timeToDatetime).format('mm:ss')
-
-    return formattedTime
-  }
-
   render () {
     const { queue: { position }, robot: { status } } = this.props
 
@@ -28,9 +16,7 @@ class SystemDetails extends Component {
         {/* <p className="SystemDetails-current-pilot">
           Current Pilot: Username
         </p> */}
-        <p className='SystemDetails-race-time'>
-          Time Remaining: {this.renderTime()}
-        </p>
+        <RaceTimerContainer />
         <p className='SystemDetails-queue-position'>
           Queue Position: {position}
         </p>

@@ -10,7 +10,8 @@ import { push } from 'react-router-redux'
 
 const mapStateToProps = state => {
   return {
-    queue: state.queue
+    queue: state.queue,
+    router: state.router
   }
 }
 

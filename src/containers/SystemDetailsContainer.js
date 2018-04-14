@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 const mapStateToProps = state => {
   return {
     queue: state.queue,
-    race: state.race,
     robot: state.robot
   }
 }

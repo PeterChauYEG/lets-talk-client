@@ -11,6 +11,15 @@
   z-index: 1;
 }
 
+.Header-race-timer {
+  background-color: transparent;
+  color: #545454;
+  font-family: 'Comfortaa', cursive;
+  text-shadow: 0px 0px 3px #FFF6F6;
+  font-size: 1.5em;
+  margin: 0;
+}
+
 .Header-site-title {
 }
 
@@ -23,6 +32,6 @@
 /* Large devces */
 @media only screen and (min-width: 992px) {
   .Header-container {
-    padding: 32px 32px 0 32px;  
+    padding: 32px 32px 0 32px;
   }
 }
