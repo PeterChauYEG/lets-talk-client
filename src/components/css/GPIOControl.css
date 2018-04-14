@@ -12,6 +12,7 @@
 
 .GPIOControl-container-left {
   align-items: center;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,6 +23,7 @@
 
 .GPIOControl-container-right {
   align-items: flex-end;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   height: 150px;
@@ -32,6 +34,7 @@
 }
 
 .GPIOControl-container-center {
+  background-color: transparent;
   align-items: center;
   display: flex;
   justify-content: space-around;
@@ -59,7 +62,7 @@
   }
 
   .GPIOControl-container-right {
-    align-items: center;
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
     height: 200px;

@@ -11,17 +11,22 @@
   z-index: 1;
 }
 
-.Header-race-timer {
+.Header-race-timer-race {
   background-color: transparent;
-  color: #545454;
+  color: #FFDFDE;
   font-family: 'Comfortaa', cursive;
-  text-shadow: 0px 0px 3px #FFF6F6;
+  text-shadow: 0px 0px 1px #FFF6F6;
   font-size: 1em;
   margin: 0;
 }
 
 .Header-site-title {
   font-size: 1em;
+}
+
+.Header-site-title-race {
+  font-size: 1em;
+  color: #FFDFDE;
 }
 
 .Header-title {
@@ -32,25 +37,41 @@
   font-size: 1em;
 }
 
+.Header-username-race {
+  font-size: 1em;
+  color: #FFDFDE;
+}
+
 /* Large devces */
 @media only screen and (min-width: 992px) {
   .Header-container {
     padding: 32px 32px 0 32px;
   }
 
-  .Header-race-timer {
+  .Header-race-timer-race {
     font-size: 1.5em;
+    color: #FFDFDE;
   }
 
   .Header-site-title {
-    font-size: 1.25em;
+    font-size: 1.5em;
+  }
+
+  .Header-site-title-race {
+    font-size: 1.5em;
+    color: #FFDFDE;
   }
 
   .Header-title {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
 
   .Header-username {
-    font-size: 1.25em;
+    font-size: 1.5em;
+  }
+
+  .Header-username-race {
+    font-size: 1.5em;
+    color: #FFDFDE;
   }
 }
