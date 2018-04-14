@@ -4,13 +4,13 @@ import React, { Component } from 'react'
 import './css/Leaderboard.css'
 
 // components
-import Header from './Header'
+import HeaderContainer from '../containers/HeaderContainer'
 
 class Leaderboard extends Component {
   render () {
     return (
       <div className='Leaderboard'>
-        <Header title='Leaderboard' />
+        <HeaderContainer title='Leaderboard' />
 
         <div className='Leaderboard-rankings'>
           <div className='Leaderboard-rank'>
