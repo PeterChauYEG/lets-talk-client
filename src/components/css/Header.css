@@ -19,3 +19,10 @@
 
 .Header-username {
 }
+
+/* Large devces */
+@media only screen and (min-width: 992px) {
+  .Header-container {
+    padding: 32px 32px 0 32px;  
+  }
+}

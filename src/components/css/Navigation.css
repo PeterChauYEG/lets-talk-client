@@ -1,6 +1,6 @@
 .Navigation-container {
   background-color: transparent;
-  bottom: 8px;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   left: 0;
@@ -29,4 +29,18 @@
 .Navigation-button p {
   background-color: #FFDFDF;
   color: #877E7E;
+}
+
+/* Large devces */
+@media only screen and (min-width: 992px) {
+  .Navigation-container {
+    justify-content: flex-start;
+    padding: 0 32px 32px 32px;
+  }
+
+  .Navigation-button {
+    width: 300px;
+    padding: 16px;
+    margin-right: 32px;
+  }
 }
