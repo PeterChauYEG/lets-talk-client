@@ -13,6 +13,7 @@
 
 .SystemDetails-queue-position {
   font-size: 1em;
+  text-align: left;
 }
 
 .SystemDetails-robot-status {
@@ -30,7 +31,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 16px;
-    width: 33vw;
+    width: 50vw;
   }
 
   .SystemDetails-queue-position {
