@@ -25,7 +25,7 @@ class Header extends Component {
     const { title } = this.props
 
     if (title) {
-      return <p className='Header-title'>{title}</p>
+      return <h1 className='Header-title'>{title}</h1>
     }
   }
 
@@ -33,10 +33,10 @@ class Header extends Component {
     return (
       <header className='Header-container'>
         <h1 className='Header-site-title' onClick={this.handleClick}>
-          MMOR
+          Lets Talk
         </h1>
         {this.renderTitle()}
-        {/* <p className="Header-username">Username</p> */}
+        <h1 className='Header-username'>Username</h1>
       </header>
     )
   }

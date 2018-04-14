@@ -35,7 +35,7 @@ class GPIOButton extends Component {
     handleGPIO(command)
   }
 
-  render () {
+  renderIcon () {
     const { icon, size } = this.props
 
     return (
@@ -46,6 +46,25 @@ class GPIOButton extends Component {
         size={size}
       />
     )
+  }
+
+  renderButton () {
+    return (
+      <button className={'GPIOButton-button'} onClick={this.handleOnClick}>
+        <p>BOOST</p>
+      </button>
+    )
+  }
+
+  render () {
+    const { command } = this.props
+
+    let item = this.renderIcon()
+    if (command === 'boost') {
+      item = this.renderButton()
+    }
+
+    return item
   }
 }
 

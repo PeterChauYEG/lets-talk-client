@@ -32,7 +32,7 @@ class SystemDetails extends Component {
           Current Pilot: Username
         </p> */}
         <p className='SystemDetails-race-time'>
-          Race Time: {this.renderTime()}
+          Time Remaining: {this.renderTime()}
         </p>
         <p className='SystemDetails-queue-position'>
           Queue Position: {position}
