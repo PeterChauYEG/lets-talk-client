@@ -1,19 +1,43 @@
 .GPIOButton-button {
+  background-color: #D8D8D8;
+  border-width: 0;
   padding: 8px;
   width: 33vw;
+}
+
+.GPIOButton-button:focus {
+  outline-color: #DE9C9C;
+}
+
+.GPIOButton-button:focus {
+  background-color: #5F5F5F;
+}
+
+.GPIOButton-button:focus p {
+  background-color: #5F5F5F;
+  color: #FFDFDF;
+}
+
+.GPIOButton-button p {
   background-color: #D8D8D8;
 }
 
 .GPIOButton-icon {
-  color: #000;
+  background-color: transparent;
+  color: #D8D8D8;
 }
 
 .GPIOButton-icon path {
-  /* text-shadow: 0px 0px 3px #fff; */
-  stroke: #fff;
   stroke-width: 10;
+  stroke: #FFF6F6;
 }
 
 .GPIOButton-icon-active {
-  color: #ff0000;
+  background-color: transparent;
+  color: #5F5F5F;
+}
+
+.GPIOButton-icon-active path {
+  stroke-width: 10;
+  stroke: #FFF6F6;
 }

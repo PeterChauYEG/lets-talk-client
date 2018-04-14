@@ -1,4 +1,5 @@
 .Leaderboard {
+  background-color: #FFF6F6;
   padding-top: 10vh;
   height: 100vh;
   width: 100vw;
@@ -7,6 +8,7 @@
 }
 
 .Leaderboard-button-container {
+  background-color: #FFF6F6;
   display: flex;
   justify-content: space-around;
   margin: 8px 0
@@ -15,15 +17,35 @@
 .Leaderboard-button {
   padding: 8px;
   width: 33vw;
+  background-color: #FFDFDF;
+  border-width: 0;
+}
+
+.Leaderboard-button:focus {
   background-color: #D8D8D8;
+  outline-color: #5F5F5F;
+}
+
+.Leaderboard-button:focus p {
+  background-color: #D8D8D8;
+  color: #5F5F5F;
+}
+
+.Leaderboard-button p {
+  background-color: #FFDFDF;
+  color: #877E7E;
 }
 
 .Leaderboard-rank {
+  background-color: #FFF6F6;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .Leaderboard-rank-username {
-  font-size: 1em;
+}
+
+.Leaderboard-rankings {
+  background-color: #FFF6F6;
 }

@@ -55,8 +55,12 @@ class Leaderboard extends Component {
           </div>
 
           <div className='Leaderboard-button-container'>
-            <div className='Leaderboard-button'>Prev</div>
-            <div className='Leaderboard-button'>Next</div>
+            <button className='Leaderboard-button'>
+              <p>Prev</p>
+            </button>
+            <button className='Leaderboard-button'>
+              <p>Next</p>
+            </button>
           </div>
         </div>
       </div>

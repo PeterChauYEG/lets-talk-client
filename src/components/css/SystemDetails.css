@@ -1,4 +1,5 @@
 .SystemDetails-container {
+  background-color: transparent;
   bottom: 50px;
   display: flex;
   flex-direction: row;
@@ -10,17 +11,13 @@
 }
 
 .SystemDetails-current-pilot {
-  font-size: 1em;
 }
 
 .SystemDetails-queue-position {
-  font-size: 1em;
 }
 
 .SystemDetails-race-time {
-  font-size: 1em;
 }
 
 .SystemDetails-robot-status {
-  font-size: 1em;
 }

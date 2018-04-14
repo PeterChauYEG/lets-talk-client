@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Poiret+One');
 
 * {
+  background-color: #FFDFDF;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -14,15 +15,24 @@ body {
 }
 
 h1 {
+  background-color: transparent;
+  color: #545454;
   font-family: 'Comfortaa', cursive;
+  text-shadow: 0px 0px 3px #FFF6F6;
+  font-size: 1.5em;
 }
 
 button p {
+  background-color: transparent;
+  color: #545454;
   font-family: 'Comfortaa', cursive;
 }
 
 p {
+  background-color: transparent;
+  color: #545454;
   font-family: 'Poiret One', cursive;
+  font-size: 1.25em;
 }
 
 #root {
