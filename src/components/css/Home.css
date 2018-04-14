@@ -1,27 +1,43 @@
 .Home {
-  height: 100vh;
-  width: 100vw;
-  text-align: center;
-  background-color: #FFF6F6;
   align-items: space-between;
+  background-color: #FFF6F6;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  text-align: center;
+  width: 100vw;
+}
+
+.Home-controls {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 8px;
+}
+
+.Home-controls-left {
+  align-items: space-between;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.Home-stream-container {
-  /* height: 100vh; */
-  /* width: 100vw; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-}
-
 .Home-stream {
   background-color: #FFDFDF;
-  height: 75vh;
+  height: 65vh;
+  margin: 8px;
   width: 100vw;
+}
+
+.Home-stream-container {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 /* Large devces */
@@ -35,24 +51,23 @@
   }
 
   .Home-controls-left {
+    align-items: space-between;
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    align-items: space-between;
     justify-content: space-between;
   }
 
   .Home-stream {
-    background-color: #FFDFDF;
     height: 65vh;
-    width: 100vw;
     margin: 32px;
+    width: 100vw;
   }
 
   .Home-stream-container {
-    margin-top: 64px;
+    align-items: flex-start;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    margin-top: 64px;
   }
 }

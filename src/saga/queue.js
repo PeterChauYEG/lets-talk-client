@@ -9,7 +9,7 @@ export function * handleKickedPilot (action) {
   const time = yield select(state => state.race.time)
 
   // check if the position
-  if (position === 'Not in queue' && time === 10) {
+  if (position === 'Not in queue' && time === 0) {
     yield put(push('/'))
   }
 }

@@ -11,7 +11,7 @@ export function updateRaceTime (time) {
 
 // initialState
 const initialState = {
-  time: 0
+  time: 60 * 5
 }
 
 // reducers

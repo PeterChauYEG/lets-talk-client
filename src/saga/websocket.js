@@ -24,7 +24,7 @@ function subscribeToSocket (socket) {
   let gpioCounter = null
   let queueCounter = 'Not in queue'
   let statusCounter = 'Unknown'
-  let timeCounter = 0
+  let timeCounter = 60 * 5
 
   return eventChannel(emit => {
     socket.on('gpio', command => {

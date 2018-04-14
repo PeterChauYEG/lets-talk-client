@@ -1,19 +1,17 @@
 .Navigation-container {
   background-color: transparent;
-  /* bottom: 0; */
   display: flex;
-  justify-content: space-between;
-  /* left: 0; */
-  padding: 0 8px;
-  /* position: absolute; */
-  /* width: 100vw; */
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 8px 0;
 }
 
 .Navigation-button {
   background-color: #FFDFDF;
   border-width: 0;
+  margin-top: 8px;
   padding: 8px;
-  width: 33vw;
+  width: 200px;
 }
 
 .Navigation-button:focus {
@@ -24,11 +22,13 @@
 .Navigation-button:focus p {
   background-color: #D8D8D8;
   color: #5F5F5F;
+  font-size: 1em;
 }
 
 .Navigation-button p {
   background-color: #FFDFDF;
   color: #877E7E;
+  font-size: 1em;
 }
 
 /* Large devces */
@@ -42,5 +42,13 @@
     width: 300px;
     padding: 16px;
     margin-right: 32px;
+  }
+
+  .Navigation-button:focus p {
+    font-size: 1.25em;
+  }
+
+  .Navigation-button p {
+    font-size: 1.25em;
   }
 }
