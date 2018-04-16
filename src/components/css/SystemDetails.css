@@ -42,5 +42,6 @@
   .SystemDetails-robot-status {
     font-size: 1.25em;
     margin-bottom: 16px;
+    margin-right: 32px;
   }
 }

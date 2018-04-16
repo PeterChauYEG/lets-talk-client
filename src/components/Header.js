@@ -41,7 +41,11 @@ class Header extends Component {
     const { router: { location: { pathname } } } = this.props
 
     if (pathname === '/race') {
-      return <RaceTimerContainer className={this.handleRaceClass('Header-race-timer')} />
+      return (
+        <RaceTimerContainer
+          className={this.handleRaceClass('Header-race-timer')}
+        />
+      )
     }
   }
 
@@ -56,7 +60,10 @@ class Header extends Component {
   render () {
     return (
       <header className='Header-container'>
-        <h1 className={this.handleRaceClass('Header-site-title')} onClick={this.handleClick}>
+        <h1
+          className={this.handleRaceClass('Header-site-title')}
+          onClick={this.handleClick}
+        >
           Lets Talk
         </h1>
         {this.renderTitle()}
