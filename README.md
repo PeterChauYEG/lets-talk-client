@@ -1,4 +1,4 @@
-# ui
+# Lets Talk UI
 
 ## Setup
 1. clone this repo
