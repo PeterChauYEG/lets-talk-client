@@ -16,13 +16,13 @@
     "react-router-redux": "next",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
     "redux-saga": "^0.16.0",
     "socket.io-client": "^2.0.4",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
     "prettier-standard": "^8.0.1",
-    "redux-devtools-extension": "^2.13.2",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1"
   },
