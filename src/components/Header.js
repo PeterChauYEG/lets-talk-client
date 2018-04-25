@@ -10,7 +10,25 @@ class Header extends Component {
   constructor () {
     super()
 
+    this.state = {
+      authOpen: false,
+      password: '',
+      username: ''
+    }
+
+    this.handleAuthClick = this.handleAuthClick.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.handleLogin = this.handleLogin.bind(this)
+    this.handlePasswordChange = this.handlePasswordChange.bind(this)
+    this.handleUsernameChange = this.handleUsernameChange.bind(this)
+  }
+
+  handleAuthClick () {
+    const { authOpen } = this.state
+
+    this.setState({
+      authOpen: !authOpen
+    })
   }
 
   handleClick () {
@@ -24,6 +42,20 @@ class Header extends Component {
     push('/')
   }
 
+  handleLogin (event) {
+    event.preventDefault()
+
+    const { password, username } = this.state
+
+    console.log({ password, username })
+  }
+
+  handlePasswordChange (event) {
+    this.setState({
+      password: event.target.value
+    })
+  }
+
   handleRaceClass (className) {
     const { router: { location: { pathname } } } = this.props
 
@@ -32,6 +64,35 @@ class Header extends Component {
     // check if null
     if (pathname === '/race') {
       result = result + '-race'
+    }
+
+    return result
+  }
+
+  handleUsernameChange (event) {
+    this.setState({
+      username: event.target.value
+    })
+  }
+
+  renderAuthentication () {
+    const { authOpen, username, password } = this.state
+
+    let result = (
+      <h1 onClick={this.handleAuthClick} className={this.handleRaceClass('Header-username')}>
+        Login
+      </h1>
+    )
+
+    if (authOpen) {
+      result = (
+        <form onSubmit={this.handleLogin}>
+          <button onClick={this.handleAuthClick}>Exit</button>
+          <input type='text' name={username} onChange={this.handleUsernameChange} />
+          <input type='password' name={password} onChange={this.handlePasswordChange} />
+          <input type='submit' value='login' />
+        </form>
+      )
     }
 
     return result
@@ -68,7 +129,7 @@ class Header extends Component {
         </h1>
         {this.renderTitle()}
         {this.renderRaceTimer()}
-        <h1 className={this.handleRaceClass('Header-username')}>Username</h1>
+        {this.renderAuthentication()}
       </header>
     )
   }
