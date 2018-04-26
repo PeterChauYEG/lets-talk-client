@@ -46,8 +46,9 @@ class Header extends Component {
     event.preventDefault()
 
     const { password, username } = this.state
+    const { loginRequest } = this.props
 
-    console.log({ password, username })
+    loginRequest(username, password)
   }
 
   handlePasswordChange (event) {

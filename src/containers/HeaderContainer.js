@@ -3,6 +3,7 @@ import Header from '../components/Header'
 
 // redux
 import { connect } from 'react-redux'
+import { loginRequest } from '../redux/authentication'
 import { handleQueue } from '../redux/queue'
 
 // navigation
@@ -18,7 +19,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleQueue: action => dispatch(handleQueue(action)),
-    push: route => dispatch(push(route))
+    loginRequest: (username, password) => dispatch(loginRequest(username, password)),
+    push: route => dispatch(push(route)),
   }
 }
 

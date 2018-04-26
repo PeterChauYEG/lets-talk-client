@@ -11,6 +11,7 @@ import createSagaMiddleware from 'redux-saga'
 import sagas from '../saga'
 
 // reducers
+import authentication from './authentication'
 import gpio from './gpio'
 import queue from './queue'
 import race from './race'
@@ -25,6 +26,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 // combine our reducers into 1
 const reducers = combineReducers({
+  authentication,
   gpio,
   queue,
   race,
