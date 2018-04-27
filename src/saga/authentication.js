@@ -4,9 +4,11 @@ import { put, select } from 'redux-saga/effects'
 import { push } from 'react-router-redux'
 
 export function * handleLogin (action) {
+  const { username, password } = action
+
   const data = {
-    username: 's',
-    password: 'd'
+    username,
+    password
   }
 
   const headers = {
@@ -20,7 +22,8 @@ export function * handleLogin (action) {
     method: 'POST'
   }
 
-  fetch('/login', options)
+  // fetch('/login', options)
+  fetch('http://localhost:8080/login', options)
     .then(response => {
       if (response.ok) {
         console.log({ response })
