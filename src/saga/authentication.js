@@ -9,9 +9,12 @@ export function * handleLogin (action) {
 
   try {
     const response = yield call(login, data)
+    console.log({response})
 
-    // update the ui to reflect a successful login
-    yield put(loginSuccess(username))
+    if (response === username) {
+      // update the ui to reflect a successful login
+      yield put(loginSuccess(username))  
+    }
   } catch (e) {
     console.log(e)
   }
@@ -59,6 +62,7 @@ const logout = () => {
 
   return fetch(`${process.env.REACT_APP_API}/logout`, options)
     .then(response => {
+      console.log({response})
       if (response.ok) {
         return response.json()
       } else {
