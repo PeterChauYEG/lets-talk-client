@@ -30,6 +30,7 @@ export function * handleLogout () {
 const login = (data) => {
   const options = {
     body: JSON.stringify(data),
+    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
@@ -51,6 +52,7 @@ const login = (data) => {
 
 const logout = () => {
   const options = {
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
@@ -72,6 +74,7 @@ const logout = () => {
 
 const protectedRoute = () => {
   const options = {
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
