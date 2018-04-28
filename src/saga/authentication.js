@@ -23,7 +23,7 @@ export function * handleLogin (action) {
   }
 
   // fetch('/login', options)
-  fetch('http://localhost:8080/login', options)
+  fetch('http://192.168.0.21:8080/login', options)
     .then(response => {
       if (response.ok) {
         console.log({ response })
