@@ -1,38 +1,72 @@
-import { put, select } from 'redux-saga/effects'
+import { call, put, select } from 'redux-saga/effects'
 
-// navigation
-import { push } from 'react-router-redux'
+// redux
+import { loginSuccess } from '../redux/authentication'
 
 export function * handleLogin (action) {
   const { username, password } = action
+  const data = { username, password }
 
-  const data = {
-    username,
-    password
+  try {
+    const response = yield call(login, data)
+
+    // update the ui to reflect a successful login
+    yield put(loginSuccess(username))
+  } catch (e) {
+    console.log(e)
   }
+}
 
-  const headers = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
+export function * handleLogout () {
+  try {
+    const response = yield call(logout)
+  } catch (e) {
+    console.log(e)
   }
+}
 
+
+const login = (data) => {
   const options = {
     body: JSON.stringify(data),
-    headers,
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
     method: 'POST'
   }
 
-  fetch(`${process.env.REACT_APP_API}/login`, options)
+  return fetch(`${process.env.REACT_APP_API}/login`, options)
     .then(response => {
       if (response.ok) {
-        console.log({ response })
         return response.json()
       } else {
         throw new Error('something went wrong')
       }
     })
-    .then(data => console.log({data}))
-    .catch(error => console.error({error}))
+    .then(data => data)
+    .catch(error => error)
+}
+
+const logout = () => {
+  const options = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    method: 'GET'
+  }
+
+  return fetch(`${process.env.REACT_APP_API}/logout`, options)
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('something went wrong')
+      }
+    })
+    .then(data => data)
+    .catch(error => error)
 }
 
 export default handleLogin

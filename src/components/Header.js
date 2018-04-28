@@ -19,6 +19,7 @@ class Header extends Component {
     this.handleAuthClick = this.handleAuthClick.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.handleLogin = this.handleLogin.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
     this.handlePasswordChange = this.handlePasswordChange.bind(this)
     this.handleUsernameChange = this.handleUsernameChange.bind(this)
   }
@@ -51,6 +52,14 @@ class Header extends Component {
     loginRequest(username, password)
   }
 
+  handleLogout (event) {
+    event.preventDefault()
+
+    const { logoutRequest } = this.props
+
+    logoutRequest()
+  }
+
   handlePasswordChange (event) {
     this.setState({
       password: event.target.value
@@ -78,6 +87,7 @@ class Header extends Component {
 
   renderAuthentication () {
     const { authOpen, username, password } = this.state
+    const { authentication } = this.props
 
     let result = (
       <h1 onClick={this.handleAuthClick} className={this.handleRaceClass('Header-username')}>
@@ -85,7 +95,16 @@ class Header extends Component {
       </h1>
     )
 
-    if (authOpen) {
+    if (authentication.username) {
+      result = (
+        <div>
+          <h1 className={this.handleRaceClass('Header-username')}>
+            {authentication.username}
+          </h1>
+          <button onClick={this.handleLogout}>Logout</button>
+        </div>
+      )
+    } else if (authOpen) {
       result = (
         <form onSubmit={this.handleLogin}>
           <button onClick={this.handleAuthClick}>Exit</button>
