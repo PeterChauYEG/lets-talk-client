@@ -9,10 +9,9 @@ export function * handleLogin (action) {
 
   try {
     const response = yield call(login, data)
-    console.log({response})
 
     if (response === username) {
-
+      yield put(loginSuccess(username))
     }
   } catch (e) {
     console.log(e)
@@ -22,6 +21,7 @@ export function * handleLogin (action) {
 export function * handleLogout () {
   try {
     const response = yield call(protectedRoute)
+    console.log(response)
   } catch (e) {
     console.log(e)
   }
