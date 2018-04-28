@@ -21,7 +21,7 @@ export function * handleLogin (action) {
 
 export function * handleLogout () {
   try {
-    const response = yield call(protected)
+    const response = yield call(protectedRoute)
   } catch (e) {
     console.log(e)
   }
@@ -70,7 +70,7 @@ const logout = () => {
     .catch(error => error)
 }
 
-const protected = () => {
+const protectedRoute = () => {
   const options = {
     headers: {
       'Content-Type': 'application/json',
