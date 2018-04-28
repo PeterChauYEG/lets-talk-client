@@ -12,8 +12,7 @@ export function * handleLogin (action) {
     console.log({response})
 
     if (response === username) {
-      // update the ui to reflect a successful login
-      yield put(loginSuccess(username))  
+
     }
   } catch (e) {
     console.log(e)
@@ -22,12 +21,11 @@ export function * handleLogin (action) {
 
 export function * handleLogout () {
   try {
-    const response = yield call(logout)
+    const response = yield call(protected)
   } catch (e) {
     console.log(e)
   }
 }
-
 
 const login = (data) => {
   const options = {
@@ -62,7 +60,27 @@ const logout = () => {
 
   return fetch(`${process.env.REACT_APP_API}/logout`, options)
     .then(response => {
-      console.log({response})
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('something went wrong')
+      }
+    })
+    .then(data => data)
+    .catch(error => error)
+}
+
+const protected = () => {
+  const options = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    method: 'GET'
+  }
+
+  return fetch(`${process.env.REACT_APP_API}/protected`, options)
+    .then(response => {
       if (response.ok) {
         return response.json()
       } else {
