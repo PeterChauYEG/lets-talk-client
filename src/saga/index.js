@@ -1,7 +1,7 @@
 import { fork, takeLatest } from 'redux-saga/effects'
 
 // redux
-import { LOGIN, LOGOUT } from '../redux/authentication'
+import { LOGIN, LOGIN_SUCCESS, LOGOUT } from '../redux/authentication'
 import { UPDATE_QUEUE_POSITION } from '../redux/queue'
 
 // sagas
@@ -13,5 +13,5 @@ export default function * rootSaga () {
   yield takeLatest(UPDATE_QUEUE_POSITION, handleKickedPilot),
   yield takeLatest(LOGIN, handleLogin),
   yield takeLatest(LOGOUT, handleLogout),
-  yield fork(websocket)
+  yield takeLatest(LOGIN_SUCCESS, websocket)
 }

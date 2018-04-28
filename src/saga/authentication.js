@@ -21,7 +21,6 @@ export function * handleLogin (action) {
 export function * handleLogout () {
   try {
     const response = yield call(logout)
-    console.log(response)
   } catch (e) {
     console.log(e)
   }
