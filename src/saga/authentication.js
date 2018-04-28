@@ -22,8 +22,7 @@ export function * handleLogin (action) {
     method: 'POST'
   }
 
-  // fetch('/login', options)
-  fetch('http://192.168.0.21:8080/login', options)
+  fetch(`${process.env.REACT_APP_API}/login`, options)
     .then(response => {
       if (response.ok) {
         console.log({ response })

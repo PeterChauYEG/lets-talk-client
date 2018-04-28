@@ -11,7 +11,7 @@ import { updateRaceTime } from '../redux/race'
 import { updateRobotStatus } from '../redux/robot'
 
 function connectToSocket () {
-  const socket = io(process.env.REACT_APP_WEBSOCKET)
+  const socket = io(process.env.REACT_APP_API)
 
   return new Promise(resolve => {
     socket.on('connect', () => {
