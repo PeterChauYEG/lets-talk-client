@@ -1,3 +1,7 @@
+.Header-authentication {
+  background-color: transparent;
+}
+
 .Header-container {
   background-color: transparent;
   display: flex;

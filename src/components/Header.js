@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 // container
 import RaceTimerContainer from '../containers/RaceTimerContainer'
@@ -107,22 +107,22 @@ class Header extends Component {
 
     if (authentication.username) {
       result = (
-        <div>
+        <Fragment>
           <h1 className={this.handleRaceClass('Header-username')}>
             {authentication.username}
           </h1>
           <button onClick={this.handleLogout}>Logout</button>
-        </div>
+        </Fragment>
       )
     } else if (authOpen) {
       result = (
-        <div>
+        <Fragment>
           <button onClick={this.handleAuthClick}>Exit</button>
           <input type='text' name={username} onChange={this.handleUsernameChange} />
           <input type='password' name={password} onChange={this.handlePasswordChange} />
           <button onClick={this.handleLogin}>Login</button>
           <button onClick={this.handleRegister}>Register</button>
-        </div>
+        </Fragment>
       )
     }
 
@@ -160,7 +160,9 @@ class Header extends Component {
         </h1>
         {this.renderTitle()}
         {this.renderRaceTimer()}
-        {this.renderAuthentication()}
+        <div className={'Header-authentication'}>
+          {this.renderAuthentication()}
+        </div>
       </header>
     )
   }
