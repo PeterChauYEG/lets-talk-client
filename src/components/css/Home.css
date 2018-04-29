@@ -25,6 +25,12 @@
   justify-content: space-between;
 }
 
+.Home-controls-login {
+  height: 15vh;
+  text-align: center;
+  width: 100%;
+}
+
 .Home-stream {
   background-color: #FFDFDF;
   height: 65vh;
