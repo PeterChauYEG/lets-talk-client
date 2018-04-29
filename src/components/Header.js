@@ -21,6 +21,7 @@ class Header extends Component {
     this.handleLogin = this.handleLogin.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
     this.handlePasswordChange = this.handlePasswordChange.bind(this)
+    this.handleRegister = this.handleRegister.bind(this)
     this.handleUsernameChange = this.handleUsernameChange.bind(this)
   }
 
@@ -79,6 +80,15 @@ class Header extends Component {
     return result
   }
 
+  handleRegister (event) {
+    event.preventDefault()
+
+    const { password, username } = this.state
+    const { registerRequest } = this.props
+
+    registerRequest(username, password)
+  }
+
   handleUsernameChange (event) {
     this.setState({
       username: event.target.value
@@ -106,12 +116,13 @@ class Header extends Component {
       )
     } else if (authOpen) {
       result = (
-        <form onSubmit={this.handleLogin}>
+        <div>
           <button onClick={this.handleAuthClick}>Exit</button>
           <input type='text' name={username} onChange={this.handleUsernameChange} />
           <input type='password' name={password} onChange={this.handlePasswordChange} />
-          <input type='submit' value='login' />
-        </form>
+          <button onClick={this.handleLogin}>Login</button>
+          <button onClick={this.handleRegister}>Register</button>
+        </div>
       )
     }
 

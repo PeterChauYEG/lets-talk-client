@@ -2,6 +2,7 @@
 export const LOGIN = 'LOGIN'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGOUT = 'LOGOUT'
+export const REGISTER = 'REGISTER'
 
 // action creators
 export function loginRequest (username, password) {
@@ -22,6 +23,14 @@ export function loginSuccess (username) {
 export function logoutRequest () {
   return {
     type: LOGOUT
+  }
+}
+
+export function registerRequest (username, password) {
+  return {
+    type: REGISTER,
+    username,
+    password
   }
 }
 
@@ -46,6 +55,10 @@ function login (state = initialState, action) {
       return {
         ...state,
         username: null
+      }
+    case REGISTER:
+      return {
+        ...state
       }
     default:
       return state

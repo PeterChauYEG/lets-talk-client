@@ -1,4 +1,4 @@
-import { call, put, select } from 'redux-saga/effects'
+import { call, put } from 'redux-saga/effects'
 
 // redux
 import { loginSuccess } from '../redux/authentication'
@@ -20,7 +20,22 @@ export function * handleLogin (action) {
 
 export function * handleLogout () {
   try {
-    const response = yield call(logout)
+    yield call(logout)
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+export function * handleRegister (action) {
+  const { username, password } = action
+  const data = { username, password }
+
+  try {
+    const response = yield call(register, data)
+
+    if (response === username) {
+      yield put(loginSuccess(username))
+    }
   } catch (e) {
     console.log(e)
   }
@@ -71,17 +86,18 @@ const logout = () => {
     .catch(error => error)
 }
 
-const protectedRoute = () => {
+const register = (data) => {
   const options = {
-    credentials: 'include',
+    body: JSON.stringify(data),
+    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     },
-    method: 'GET'
+    method: 'POST'
   }
 
-  return fetch(`${process.env.REACT_APP_API}/protected`, options)
+  return fetch(`${process.env.REACT_APP_API}/register`, options)
     .then(response => {
       if (response.ok) {
         return response.json()
